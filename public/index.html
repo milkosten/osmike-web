@@ -3,238 +3,228 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OSMike — self-hosted planet OpenStreetMap</title>
-<meta name="description" content="OSMike is a self-hosted, unmetered, worldwide OpenStreetMap stack — Overpass, Nominatim, OSRM and vector tiles — the geo substrate powering MikeMaps and MikeGuide." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b1418'/%3E%3Cpath d='M6 22 L13 10 L19 18 L26 8' fill='none' stroke='%23e8613c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='26' cy='8' r='2.6' fill='%23e8613c'/%3E%3C/svg%3E" />
+<title>MikeOS — a freer, smarter way to live</title>
+<meta name="description" content="MikeOS is the AI-first phone and computer that quietly handles the everyday — so you're free to live it. A new world where life just flows." />
+<meta property="og:title" content="MikeOS — life just flows" />
+<meta property="og:description" content="The AI-first phone and computer that works for you. Not apps you manage — a world that handles the everyday, so you're free to live it." />
+<meta name="theme-color" content="#FBFAF7" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23FF8A5B'/%3E%3Cstop offset='.5' stop-color='%23FF6FA5'/%3E%3Cstop offset='1' stop-color='%237C7CFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23FBFAF7'/%3E%3Ccircle cx='16' cy='16' r='8' fill='url(%23g)'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0b1418; --panel:#101e24; --panel-2:#0e191e;
-    --bone:#e9e7df; --muted:#8fa3a8; --dim:#6a7f85;
-    --orange:#e8613c; --teal:#5bb5a8; --line:#22333a; --line-2:#1a282e;
-    --mono:ui-monospace,"SF Mono",Menlo,"JetBrains Mono",Consolas,monospace;
-    --sans:system-ui,-apple-system,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    --bg:#FBFAF7; --ink:#17130E; --muted:#6c6458; --faint:#9a9082;
+    --line:#ece6dc; --card:#ffffff;
+    --coral:#FF8A5B; --rose:#FF6FA5; --peri:#7C7CFF; --sky:#4FC4E8;
+    --accent:#E8553F;
+    --disp:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --grad:linear-gradient(100deg,var(--coral),var(--rose) 42%,var(--peri) 82%);
   }
   *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;background:var(--ink);color:var(--bone);
-    font-family:var(--sans);line-height:1.55;
-    font-feature-settings:"kern" 1;-webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-  /* faint lat/lon graticule over the whole page */
-  body::before{
-    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/64px 64px,
-      linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/64px 64px;
-    -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 75%);
-            mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 75%);
-    opacity:.5;
-  }
-  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
-  a{color:inherit}
-  .mono{font-family:var(--mono)}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:17px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+  a{color:inherit;text-decoration:none}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  em{font-style:italic}
 
-  /* ---- top bar ---- */
-  header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0 8px}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.01em;font-size:18px}
-  .brand svg{display:block}
-  .brand b{color:var(--orange);font-weight:800}
-  .coords{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.02em}
+  /* atmosphere */
+  .dawn{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .dawn::before,.dawn::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.5}
+  .dawn::before{width:70vw;height:70vw;left:-15vw;top:-25vw;
+    background:radial-gradient(circle at 40% 40%,var(--coral),transparent 62%)}
+  .dawn::after{width:60vw;height:60vw;right:-18vw;top:-10vw;
+    background:radial-gradient(circle at 60% 40%,var(--peri),transparent 62%)}
+  .content{position:relative;z-index:1}
 
-  /* ---- hero ---- */
-  .hero{padding:64px 0 40px}
-  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin:0 0 22px}
-  h1{
-    font-size:clamp(44px,9vw,104px);line-height:.94;margin:0;letter-spacing:-.035em;font-weight:800;
-    text-wrap:balance;
-  }
-  h1 .os{color:var(--bone)} h1 .mike{color:var(--orange)}
-  .lede{max-width:60ch;margin:26px 0 0;font-size:clamp(17px,2.4vw,21px);color:#cdd6d6}
-  .lede strong{color:var(--bone);font-weight:650}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-  .chip{font-family:var(--mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);
-    background:var(--panel-2);border-radius:999px;padding:7px 13px;letter-spacing:.01em}
-  .chip b{color:var(--orange);font-weight:600}
-  .chip.teal b{color:var(--teal)}
+  /* nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+  .logo .mark{width:22px;height:22px;border-radius:7px;background:var(--grad);display:inline-block}
+  nav .cta{font-family:var(--sans);font-weight:600;font-size:14.5px;border:1px solid var(--ink);
+    border-radius:999px;padding:9px 18px;transition:.2s}
+  nav .cta:hover{background:var(--ink);color:var(--bg)}
 
-  /* ---- section heading ---- */
-  .sec{padding:52px 0 8px}
-  .sec-h{display:flex;align-items:baseline;gap:14px;margin:0 0 24px}
-  .sec-h .n{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.1em}
-  .sec-h h2{font-size:clamp(22px,3.4vw,30px);margin:0;letter-spacing:-.02em;font-weight:750}
-  .sec-h .rule{flex:1;height:1px;background:var(--line-2);align-self:center}
+  /* hero */
+  .hero{padding:76px 0 40px;max-width:930px}
+  .eyebrow{font-weight:600;font-size:14px;letter-spacing:.02em;color:var(--accent);margin:0 0 26px;
+    display:inline-flex;align-items:center;gap:9px}
+  .eyebrow .d{width:7px;height:7px;border-radius:50%;background:var(--grad)}
+  h1{font-family:var(--disp);font-weight:400;font-size:clamp(46px,8.5vw,104px);line-height:1.02;
+    letter-spacing:-.025em;margin:0;text-wrap:balance}
+  h1 em{font-weight:400}
+  .sub{font-size:clamp(19px,2.5vw,24px);color:var(--muted);max-width:34ch;margin:30px 0 0;line-height:1.5}
+  .sub b{color:var(--ink);font-weight:600}
+  .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px;align-items:center}
+  .btn{font-weight:600;font-size:16px;border-radius:999px;padding:15px 30px;background:var(--ink);color:var(--bg);
+    transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px -12px rgba(23,19,14,.5)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(23,19,14,.55)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;padding-left:8px}
+  .btn.ghost:hover{transform:none;color:var(--accent)}
 
-  /* ---- services grid ---- */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  .card{
-    background:linear-gradient(180deg,var(--panel),var(--panel-2));
-    border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px;position:relative;overflow:hidden;
-    transition:border-color .2s ease,transform .2s ease;
-  }
-  .card:hover{border-color:#33484f;transform:translateY(-2px)}
-  .card .k{position:absolute;top:16px;right:18px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em}
-  .card h3{margin:0 0 4px;font-size:19px;letter-spacing:-.01em;font-weight:750}
-  .card h3 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:9px;vertical-align:middle}
-  .card p{margin:0 0 16px;color:var(--muted);font-size:14.5px;max-width:40ch}
-  .paths{display:flex;flex-direction:column;gap:6px}
-  .path{font-family:var(--mono);font-size:12.5px;color:#b9c6c6;background:#0a141a;border:1px solid var(--line-2);
-    border-radius:8px;padding:8px 11px;overflow-x:auto;white-space:nowrap}
-  .path .m{color:var(--teal)}
+  /* manifesto */
+  .band{padding:96px 0}
+  .kicker{font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 22px}
+  .lead{font-family:var(--disp);font-weight:300;font-size:clamp(28px,4.4vw,50px);line-height:1.18;
+    letter-spacing:-.02em;margin:0;max-width:22ch}
+  .lead .q{color:var(--muted)}
+  .man-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:end}
+  .man-grid p{color:var(--muted);font-size:18px;max-width:42ch;margin:0}
+  .man-grid p + p{margin-top:20px}
 
-  /* ---- why band ---- */
-  .why{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .why .item{padding:20px;border:1px solid var(--line-2);border-radius:12px;background:var(--panel-2)}
-  .why .item h4{margin:0 0 6px;font-size:15.5px;letter-spacing:-.01em}
-  .why .item p{margin:0;color:var(--muted);font-size:14px}
-  .why .item .i{font-family:var(--mono);color:var(--orange);font-size:12px;letter-spacing:.1em}
+  /* feelings */
+  .feel{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .f{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px 30px;
+    transition:transform .25s,box-shadow .25s;box-shadow:0 1px 0 rgba(23,19,14,.02)}
+  .f:hover{transform:translateY(-4px);box-shadow:0 26px 50px -30px rgba(23,19,14,.35)}
+  .f .orb{width:46px;height:46px;border-radius:14px;margin-bottom:22px;background:var(--grad)}
+  .f:nth-child(2) .orb{background:linear-gradient(120deg,var(--rose),var(--peri))}
+  .f:nth-child(3) .orb{background:linear-gradient(120deg,var(--coral),var(--sky))}
+  .f h3{font-family:var(--disp);font-weight:400;font-size:26px;letter-spacing:-.02em;margin:0 0 10px}
+  .f p{color:var(--muted);font-size:16px;margin:0}
 
-  /* ---- box spec ---- */
-  .box{margin-top:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel-2);
-    display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-  .box .cell{padding:20px 22px;border-right:1px solid var(--line-2)}
-  .box .cell:last-child{border-right:0}
-  .box .cell .l{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
-  .box .cell .v{font-size:17px;font-weight:700;letter-spacing:-.01em}
-  .box .cell .s{font-size:13px;color:var(--muted);margin-top:2px}
+  /* one experience */
+  .one{background:var(--ink);color:#f7f2ea;border-radius:34px;padding:clamp(44px,7vw,88px);
+    position:relative;overflow:hidden}
+  .one::after{content:"";position:absolute;width:56vw;height:56vw;right:-16vw;bottom:-30vw;border-radius:50%;
+    background:radial-gradient(circle,var(--rose),transparent 60%);opacity:.4;filter:blur(30px)}
+  .one .kicker{color:#b9ad9c}
+  .one h2{font-family:var(--disp);font-weight:300;font-size:clamp(30px,5vw,58px);line-height:1.1;
+    letter-spacing:-.02em;margin:0;max-width:20ch;position:relative}
+  .one p{color:#cabfae;font-size:19px;max-width:46ch;margin:24px 0 0;position:relative}
+  .devices{display:flex;gap:14px;margin-top:38px;position:relative;flex-wrap:wrap}
+  .pill{border:1px solid rgba(247,242,234,.25);border-radius:999px;padding:10px 20px;font-weight:600;font-size:15px}
 
-  /* ---- footer ---- */
-  footer{margin-top:64px;border-top:1px solid var(--line-2);padding:28px 0 60px;
-    display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
-  footer .l{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
-  footer .hosts{display:flex;flex-wrap:wrap;gap:10px}
-  .host{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line-2);
-    border-radius:999px;padding:6px 12px}
-  .host b{color:var(--teal);font-weight:600}
-  .host.gate b{color:var(--orange)}
+  /* closing */
+  .close{text-align:center;padding:120px 0 40px}
+  .close h2{font-family:var(--disp);font-weight:400;font-size:clamp(38px,7vw,86px);line-height:1.03;
+    letter-spacing:-.025em;margin:0 auto;max-width:16ch;text-wrap:balance}
+  .close p{color:var(--muted);font-size:20px;margin:26px auto 40px;max-width:38ch}
 
-  /* motion */
-  .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
-  .reveal.d1{animation-delay:.05s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.2s}
-  @keyframes rise{to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:70px;padding:40px 0 70px;
+    display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;color:var(--faint);font-size:14.5px}
+  footer .logo{font-size:16px;color:var(--ink)}
+  footer nav{padding:0;gap:24px;display:flex}
+  footer a:hover{color:var(--ink)}
 
-  @media(max-width:760px){
-    .grid{grid-template-columns:1fr}
-    .why{grid-template-columns:1fr}
-    .box{grid-template-columns:1fr 1fr}
-    .box .cell:nth-child(2){border-right:0}
-    .coords{display:none}
+  /* reveal */
+  .rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.dawn{display:none}}
+
+  @media(max-width:820px){
+    .man-grid{grid-template-columns:1fr;gap:26px;align-items:start}
+    .feel{grid-template-columns:1fr}
+    .band{padding:70px 0}
   }
 </style>
 </head>
 <body>
+<div class="dawn" aria-hidden="true"></div>
+<div class="content">
 <div class="wrap">
 
-  <header class="top">
-    <div class="brand">
-      <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true">
-        <rect width="32" height="32" rx="7" fill="#101e24" stroke="#22333a"/>
-        <path d="M6 22 L13 10 L19 18 L26 8" fill="none" stroke="#e8613c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="26" cy="8" r="2.6" fill="#e8613c"/>
-      </svg>
-      <span>OS<b>Mike</b></span>
+  <nav>
+    <a class="logo" href="/"><span class="mark"></span>MikeOS</a>
+    <a class="cta" href="#join">Get early access</a>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow rv"><span class="d"></span>Introducing MikeOS</p>
+    <h1 class="rv">A new world,<br>where life <em class="grad-text">just&nbsp;flows</em>.</h1>
+    <p class="sub rv">The AI-first phone and computer that quietly handles the everyday —
+      so you're <b>free to live it</b>. Not apps you manage. A world that works for you.</p>
+    <div class="actions rv">
+      <a class="btn" href="#join">Get early access</a>
+      <a class="btn ghost" href="#story">See how it feels →</a>
     </div>
-    <div class="coords">43.7038&nbsp;N · 7.3111&nbsp;E</div>
   </header>
 
-  <section class="hero">
-    <p class="eyebrow reveal">Self-hosted · Planet OSM</p>
-    <h1 class="reveal d1"><span class="os">OS</span><span class="mike">Mike</span></h1>
-    <p class="lede reveal d2">The whole planet's map — <strong>self-hosted, unmetered, worldwide</strong>.
-      Overpass, Nominatim, OSRM and vector tiles on one box, so the fleet stops borrowing rate-limited
-      public APIs. The geo substrate powering <strong>MikeMaps</strong> &amp; <strong>MikeGuide</strong>.</p>
-    <div class="chips reveal d3">
-      <span class="chip">planet coverage <b>· worldwide</b></span>
-      <span class="chip"><b>0</b> rate limits</span>
-      <span class="chip teal">own the geo-data <b>for AI</b></span>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="sec-h"><span class="n">01</span><h2>What it serves</h2><span class="rule"></span></div>
-    <div class="grid">
-
-      <div class="card">
-        <span class="k">bearer</span>
-        <h3><span class="dot" style="background:var(--orange)"></span>Overpass</h3>
-        <p>Named-POI, tag and spatial queries across the raw planet — "what's here / along this route".</p>
-        <div class="paths"><div class="path"><span class="m">POST</span> /overpass/api/interpreter</div></div>
+  <section class="band" id="story">
+    <div class="man-grid">
+      <div>
+        <p class="kicker rv">The shift</p>
+        <p class="lead rv">For forty years, your devices made <em>you</em> do the work.
+          <span class="q">Endless apps. Settings. Notifications. Companies deciding how you live.</span></p>
       </div>
-
-      <div class="card">
-        <span class="k">bearer</span>
-        <h3><span class="dot" style="background:var(--teal)"></span>Nominatim</h3>
-        <p>Geocoding (name / address → coords) and reverse-geocoding (coords → the place you're at).</p>
-        <div class="paths">
-          <div class="path"><span class="m">GET</span> /nominatim/search?q=&amp;format=json</div>
-          <div class="path"><span class="m">GET</span> /nominatim/reverse?lat=&amp;lon=</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="k">bearer</span>
-        <h3><span class="dot" style="background:var(--orange)"></span>OSRM</h3>
-        <p>Routing, distance / ETA matrices, and snap-to-roads map-matching for clean per-road trails.</p>
-        <div class="paths">
-          <div class="path"><span class="m">GET</span> /route/route/v1/driving/{lon,lat;…}</div>
-          <div class="path"><span class="m">GET</span> /route/match/v1/driving/…</div>
-        </div>
-      </div>
-
-      <div class="card">
-        <span class="k">public</span>
-        <h3><span class="dot" style="background:var(--teal)"></span>Vector tiles</h3>
-        <p>A full-planet MapLibre basemap — style, glyphs and byte-range vector tiles, no usage policy.</p>
-        <div class="paths">
-          <div class="path"><span class="m">GET</span> /style.json</div>
-          <div class="path"><span class="m">GET</span> /planet/{z}/{x}/{y}.mvt</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="sec-h"><span class="n">02</span><h2>Why self-hosted</h2><span class="rule"></span></div>
-    <div class="why">
-      <div class="item">
-        <div class="i">NO LIMITS</div>
-        <h4>Full speed, worldwide</h4>
-        <p>No rate caps, no usage-policy risk. Bulk global extraction and search at NVMe speed.</p>
-      </div>
-      <div class="item">
-        <div class="i">FOR AI</div>
-        <h4>Own the geo-data</h4>
-        <p>Semantic place search, geo-context for the on-device LLM, and a road graph to reason over.</p>
-      </div>
-      <div class="item">
-        <div class="i">ONE SUBSTRATE</div>
-        <h4>Four rows, one box</h4>
-        <p>Geocode, reverse-geocode, directions and snap-to-roads all read the same planet OSM.</p>
+      <div class="rv">
+        <p>MikeOS turns it around. The intelligence comes to <b style="color:var(--ink)">you</b> —
+          understanding your day, your people and your world, and quietly taking care of the rest.</p>
+        <p>No walled gardens. No busywork. Just a phone and a computer that feel like they're finally
+          on your side.</p>
       </div>
     </div>
   </section>
 
-  <section class="sec">
-    <div class="sec-h"><span class="n">03</span><h2>The box</h2><span class="rule"></span></div>
-    <div class="box">
-      <div class="cell"><div class="l">Compute</div><div class="v">Ryzen 9 5950X</div><div class="s">16c / 32t</div></div>
-      <div class="cell"><div class="l">Memory</div><div class="v">128 GB ECC</div><div class="s">planet in RAM</div></div>
-      <div class="cell"><div class="l">Storage</div><div class="v">3.5 TB NVMe</div><div class="s">RAID1 datacenter</div></div>
-      <div class="cell"><div class="l">Location</div><div class="v">Falkenstein</div><div class="s">unlimited traffic</div></div>
+  <section class="band" style="padding-top:0">
+    <p class="kicker rv" style="text-align:center;margin-bottom:44px">What it feels like</p>
+    <div class="feel">
+      <div class="f rv">
+        <div class="orb"></div>
+        <h3>It already knows</h3>
+        <p>Your morning, your commute, the people who matter, the moment to leave — anticipated and
+          handled before you have to think about it.</p>
+      </div>
+      <div class="f rv">
+        <div class="orb"></div>
+        <h3>Everything, together</h3>
+        <p>Phone and computer as one calm, continuous experience. Pick up where you left off, anywhere,
+          without a single seam.</p>
+      </div>
+      <div class="f rv">
+        <div class="orb"></div>
+        <h3>Truly yours</h3>
+        <p>Your life, your data, your freedom. No gatekeepers taking a cut of your attention — an OS
+          that answers to you and no one else.</p>
+      </div>
     </div>
+  </section>
+
+  <section class="band" style="padding-top:0">
+    <div class="one rv">
+      <p class="kicker">One life, one intelligence</p>
+      <h2>Your world, gently in flow — from the moment you wake to the moment you rest.</h2>
+      <p>MikeOS weaves your phone and your computer into a single, thoughtful presence that lives your
+        day with you. You just live. It keeps up.</p>
+      <div class="devices">
+        <span class="pill">📱 Phone</span>
+        <span class="pill">💻 Computer</span>
+        <span class="pill">✨ One seamless life</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="join">
+    <h2 class="rv">Welcome to a <em class="grad-text">freer</em> way to live.</h2>
+    <p class="rv">MikeOS is coming. Be among the first to step into a life that finally flows.</p>
+    <a class="btn rv" href="mailto:hello@osmike.com?subject=MikeOS%20early%20access">Get early access</a>
   </section>
 
   <footer>
-    <div class="l">Part of <b style="color:var(--bone)">MikeOS</b> — the AI-first OS.</div>
-    <div class="hosts">
-      <span class="host gate"><b>osm.osmike.com</b> · APIs · bearer</span>
-      <span class="host"><b>tiles.osmike.com</b> · basemap · public</span>
-    </div>
+    <a class="logo" href="/"><span class="mark"></span>MikeOS</a>
+    <div>A new world of AI-powered living.</div>
+    <nav>
+      <a href="mailto:hello@osmike.com">Contact</a>
+      <a href="https://osm.osmike.com">Platform</a>
+    </nav>
   </footer>
 
 </div>
+</div>
+
+<script>
+  (function(){
+    var els=[].slice.call(document.querySelectorAll('.rv'));
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){ if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);} });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
 </body>
 </html>
