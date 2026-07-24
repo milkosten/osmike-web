@@ -8,6 +8,16 @@
 <meta property="og:title" content="MikeOS — life just flows" />
 <meta property="og:description" content="The AI-first phone and computer that works for you. Not apps you manage — a world that handles the everyday, so you're free to live it." />
 <meta name="theme-color" content="#FBFAF7" />
+<link rel="canonical" href="https://www.osmike.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.osmike.com/" />
+<meta property="og:image" content="https://www.osmike.com/img/hero-overlook.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="MikeOS — life just flows" />
+<meta name="twitter:description" content="The AI-first phone and computer that works for you. A world that handles the everyday, so you're free to live it." />
+<meta name="twitter:image" content="https://www.osmike.com/img/hero-overlook.jpg" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23FF8A5B'/%3E%3Cstop offset='.5' stop-color='%23FF6FA5'/%3E%3Cstop offset='1' stop-color='%237C7CFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23FBFAF7'/%3E%3Ccircle cx='16' cy='16' r='8' fill='url(%23g)'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,6 +165,21 @@
     background:var(--bg);border-radius:999px;padding:11px 22px;font-weight:600;font-size:14px;position:relative}
   .promise .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--grad)}
 
+  /* product banner + storage */
+  .p-banner{border-radius:20px;overflow:hidden;aspect-ratio:21/9;margin:0 0 22px;
+    box-shadow:0 24px 55px -36px rgba(23,19,14,.4)}
+  .p-banner img{width:100%;height:100%;object-fit:cover;display:block}
+  .storage{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px}
+  .storage .sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:20px}
+  .storage h4{font-family:var(--disp);font-weight:400;font-size:23px;letter-spacing:-.02em;margin:0}
+  .storage .note{color:var(--faint);font-size:14px;margin:0}
+  .stiers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .st{border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center;background:var(--bg)}
+  .st .amt{font-family:var(--disp);font-size:22px;letter-spacing:-.02em;display:block;margin-bottom:4px}
+  .st .cost{color:var(--muted);font-size:14.5px}
+  .st.free{border-color:transparent;box-shadow:0 0 0 1.5px var(--peri) inset}
+  .st.free .cost{color:var(--accent);font-weight:600}
+
   /* one experience */
   .one{background:var(--ink);color:#f7f2ea;border-radius:34px;padding:clamp(44px,7vw,88px);
     position:relative;overflow:hidden}
@@ -192,6 +217,7 @@
     .j,.j.wide{aspect-ratio:3/2}
     .prods{grid-template-columns:1fr}
     .incl{grid-template-columns:1fr}
+    .stiers{grid-template-columns:repeat(2,1fr)}
     .band{padding:70px 0}
   }
 </style>
@@ -216,7 +242,7 @@
       <a class="btn ghost" href="#story">See how it feels →</a>
     </div>
     <div class="hero-media rv">
-      <img src="/img/hero-overlook.jpg" width="1280" height="720" fetchpriority="high" decoding="async"
+      <img src="/img/hero-overlook.webp" width="1280" height="720" fetchpriority="high" decoding="async"
         alt="A woman with a warm coffee watching the dawn break over the sea from a cliff">
     </div>
   </header>
@@ -241,7 +267,7 @@
     <p class="kicker rv" style="text-align:center;margin-bottom:44px">What it feels like</p>
     <div class="feel">
       <div class="f rv">
-        <div class="f-media"><img src="/img/journey-road.jpg" width="1280" height="720" loading="lazy" decoding="async"
+        <div class="f-media"><img src="/img/journey-road.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="Two friends laughing at a mountain viewpoint on a golden-hour road trip"></div>
         <div class="f-body">
           <h3>It already knows</h3>
@@ -250,7 +276,7 @@
         </div>
       </div>
       <div class="f rv">
-        <div class="f-media"><img src="/img/journey-work.jpg" width="1280" height="720" loading="lazy" decoding="async"
+        <div class="f-media"><img src="/img/journey-work.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="A person absorbed in writing at a sunlit café window seat"></div>
         <div class="f-body">
           <h3>Everything, together</h3>
@@ -259,7 +285,7 @@
         </div>
       </div>
       <div class="f rv">
-        <div class="f-media"><img src="/img/journey-beach.jpg" width="1280" height="720" loading="lazy" decoding="async"
+        <div class="f-media"><img src="/img/journey-beach.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="Two best friends running along the shore at golden hour"></div>
         <div class="f-body">
           <h3>Truly yours</h3>
@@ -273,32 +299,48 @@
   <section class="band journeys" style="padding-top:0">
     <p class="kicker rv" style="text-align:center;margin-bottom:44px">One life, every moment</p>
     <div class="jgrid">
-      <a class="j wide rv" href="#join">
-        <img src="/img/journey-abroad.jpg" width="1280" height="720" loading="lazy" decoding="async"
+      <a class="j wide rv" href="#order">
+        <img src="/img/journey-morning.webp" width="1280" height="720" loading="lazy" decoding="async"
+          alt="A woman with a warm mug by a sunlit window in the early morning light">
+        <div class="cap">
+          <h3>The morning is already yours</h3>
+          <p>You wake to a day that's quietly handled — nothing to manage, only to live.</p>
+        </div>
+      </a>
+      <a class="j rv" href="#order">
+        <img src="/img/journey-abroad.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="A traveller reading a menu with ease at a sunlit old-town courtyard café">
         <div class="cap">
           <h3>Anywhere already feels like home</h3>
           <p>Menus, streets and strangers — every one speaks your language now.</p>
         </div>
       </a>
-      <a class="j rv" href="#join">
-        <img src="/img/journey-cooking.jpg" width="1280" height="720" loading="lazy" decoding="async"
+      <a class="j rv" href="#order">
+        <img src="/img/journey-cooking.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="Friends cooking together around a warm kitchen island">
         <div class="cap">
           <h3>The kitchen is the party</h3>
           <p>What you feel like cooking is already on the list. Just gather everyone.</p>
         </div>
       </a>
-      <a class="j rv" href="#join">
-        <img src="/img/journey-dinner.jpg" width="1280" height="720" loading="lazy" decoding="async"
+      <a class="j rv" href="#order">
+        <img src="/img/journey-dinner.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="A couple at a candlelit garden restaurant at dusk">
         <div class="cap">
           <h3>Dinner, handled</h3>
           <p>The right table, the easy check — nothing between you and the evening.</p>
         </div>
       </a>
-      <a class="j wide rv" href="#join">
-        <img src="/img/journey-evening.jpg" width="1280" height="720" loading="lazy" decoding="async"
+      <a class="j rv" href="#order">
+        <img src="/img/journey-night.webp" width="1280" height="720" loading="lazy" decoding="async"
+          alt="Friends laughing and dancing on a rooftop terrace at dusk under string lights">
+        <div class="cap">
+          <h3>The night, in perfect time</h3>
+          <p>Wherever the evening goes, the music and the moment always match.</p>
+        </div>
+      </a>
+      <a class="j wide rv" href="#order">
+        <img src="/img/journey-evening.webp" width="1280" height="720" loading="lazy" decoding="async"
           alt="A couple relaxing under a blanket in a warm, lamplit living room">
         <div class="cap">
           <h3>Home, exhale</h3>
@@ -315,6 +357,10 @@
       single, seamless life.</p>
 
     <p class="kicker rv" style="margin:0 0 18px">The phones</p>
+    <div class="p-banner rv">
+      <img src="/img/product-phones.webp" width="1280" height="720" loading="lazy" decoding="async"
+        alt="A MikeOS phone resting on warm linen in soft dawn light">
+    </div>
     <div class="prods">
       <div class="p rv">
         <p class="tag">Phone</p>
@@ -345,6 +391,10 @@
     </div>
 
     <p class="kicker rv" style="margin:46px 0 18px">The computers</p>
+    <div class="p-banner rv">
+      <img src="/img/product-computers.webp" width="1280" height="720" loading="lazy" decoding="async"
+        alt="A MikeOS laptop on a sunlit wooden desk beside a coffee and a plant">
+    </div>
     <div class="prods">
       <div class="p rv">
         <p class="tag">Computer</p>
@@ -395,6 +445,31 @@
         </ul>
       </div>
     </div>
+
+    <div class="storage rv">
+      <div class="sh">
+        <h4>MikeCloud storage</h4>
+        <p class="note">Cancel or change anytime · one plan shares across your whole household</p>
+      </div>
+      <div class="stiers">
+        <div class="st free">
+          <span class="amt">50&nbsp;GB</span>
+          <span class="cost">Included, free</span>
+        </div>
+        <div class="st">
+          <span class="amt">200&nbsp;GB</span>
+          <span class="cost">€2.99 / mo</span>
+        </div>
+        <div class="st">
+          <span class="amt">1&nbsp;TB</span>
+          <span class="cost">€8.99 / mo</span>
+        </div>
+        <div class="st">
+          <span class="amt">2&nbsp;TB</span>
+          <span class="cost">€14.99 / mo</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="band" style="padding-top:0">
@@ -432,8 +507,9 @@
     <a class="logo" href="/"><span class="mark"></span>MikeOS</a>
     <div>A new world of AI-powered living.</div>
     <nav>
+      <a href="#order">Order</a>
       <a href="mailto:hello@osmike.com">Contact</a>
-      <a href="https://osm.osmike.com">Platform</a>
+      <a href="/platform.html">Platform</a>
     </nav>
   </footer>
 

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MikeOS Platform — the AI-first operating system</title>
+<meta name="description" content="Under the calm, MikeOS is an AI-first operating system: every app is an autonomous agent, your data stays yours, and certified apps are always ad-free. The story for the curious." />
+<meta name="theme-color" content="#FBFAF7" />
+<meta property="og:title" content="MikeOS Platform — where the AI is the OS" />
+<meta property="og:description" content="Every app is an autonomous agent. Your data stays yours. Certified apps are always ad-free." />
+<meta property="og:image" content="https://www.osmike.com/img/hero-overlook.jpg" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFAF7; --ink:#17130E; --muted:#6c6458; --faint:#9a9082;
+    --line:#ece6dc; --card:#ffffff;
+    --coral:#FF8A5B; --rose:#FF6FA5; --peri:#7C7CFF; --sky:#4FC4E8; --accent:#E8553F;
+    --disp:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --grad:linear-gradient(100deg,var(--coral),var(--rose) 42%,var(--peri) 82%);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:17px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 26px}
+  a{color:inherit;text-decoration:none}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .dawn{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .dawn::before{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;
+    width:70vw;height:70vw;left:-18vw;top:-28vw;
+    background:radial-gradient(circle at 40% 40%,var(--coral),transparent 62%)}
+  .dawn::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;
+    width:56vw;height:56vw;right:-16vw;top:-8vw;
+    background:radial-gradient(circle at 60% 40%,var(--peri),transparent 62%)}
+  .content{position:relative;z-index:1}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.02em}
+  .logo .mark{width:22px;height:22px;border-radius:7px;background:var(--grad);display:inline-block}
+  nav .cta{font-weight:600;font-size:14.5px;border:1px solid var(--ink);border-radius:999px;padding:9px 18px;transition:.2s}
+  nav .cta:hover{background:var(--ink);color:var(--bg)}
+
+  header.hero{padding:64px 0 30px}
+  .eyebrow{font-weight:600;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 22px}
+  h1{font-family:var(--disp);font-weight:400;font-size:clamp(40px,7vw,78px);line-height:1.04;
+    letter-spacing:-.025em;margin:0;text-wrap:balance;max-width:16ch}
+  h1 em{font-style:italic}
+  .lede{font-size:clamp(18px,2.3vw,22px);color:var(--muted);max-width:56ch;margin:26px 0 0}
+
+  .band{padding:56px 0;border-top:1px solid var(--line)}
+  .kicker{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 18px}
+  h2{font-family:var(--disp);font-weight:400;font-size:clamp(26px,3.6vw,40px);letter-spacing:-.02em;margin:0 0 18px;max-width:20ch}
+  p.body{color:var(--muted);font-size:17.5px;max-width:64ch;margin:0 0 16px}
+  p.body b{color:var(--ink);font-weight:600}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+  .c{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 28px}
+  .c .orb{width:40px;height:40px;border-radius:12px;background:var(--grad);margin-bottom:18px}
+  .c:nth-child(2) .orb{background:linear-gradient(120deg,var(--rose),var(--peri))}
+  .c:nth-child(3) .orb{background:linear-gradient(120deg,var(--coral),var(--sky))}
+  .c:nth-child(4) .orb{background:linear-gradient(120deg,var(--peri),var(--coral))}
+  .c h3{font-family:var(--disp);font-weight:400;font-size:22px;letter-spacing:-.02em;margin:0 0 8px}
+  .c p{color:var(--muted);font-size:15.5px;margin:0}
+
+  .loop{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .loop span{border:1px solid var(--line);background:var(--card);border-radius:999px;
+    padding:9px 17px;font-weight:600;font-size:14.5px}
+  .loop span b{color:var(--accent)}
+
+  .promise{border:1px solid var(--line);background:linear-gradient(180deg,#fff,#fff7f0);
+    border-radius:26px;padding:clamp(32px,5vw,52px);margin-top:8px}
+  .promise h2{margin:0 0 10px;max-width:22ch}
+  .promise p{color:var(--muted);font-size:17px;max-width:60ch;margin:0}
+  .promise .badge{display:inline-flex;align-items:center;gap:9px;margin-top:22px;border:1px solid var(--line);
+    background:var(--bg);border-radius:999px;padding:10px 20px;font-weight:600;font-size:14px}
+  .promise .badge .dot{width:9px;height:9px;border-radius:50%;background:var(--grad)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;align-items:center}
+  .btn{font-weight:600;font-size:16px;border-radius:999px;padding:14px 28px;background:var(--ink);color:var(--bg);
+    transition:transform .2s;box-shadow:0 10px 30px -12px rgba(23,19,14,.5)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none}
+  .btn.ghost:hover{color:var(--accent)}
+
+  footer{border-top:1px solid var(--line);margin-top:24px;padding:36px 0 64px;
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:var(--faint);font-size:14.5px}
+  footer .logo{font-size:16px;color:var(--ink)}
+  footer nav{padding:0;gap:22px;display:flex}
+  footer a:hover{color:var(--ink)}
+
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="dawn" aria-hidden="true"></div>
+<div class="content">
+<div class="wrap">
+
+  <nav>
+    <a class="logo" href="/"><span class="mark"></span>MikeOS</a>
+    <a class="cta" href="/#order">Order now</a>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">For the curious</p>
+    <h1>The AI isn't in the OS. The AI <em class="grad-text">is</em> the OS.</h1>
+    <p class="lede">You never have to think about any of this — that's the whole point. But if you like
+      to know what's under the calm, here's how MikeOS actually works.</p>
+  </header>
+
+  <section class="band">
+    <p class="kicker">The idea</p>
+    <h2>One intelligence, living your day with you.</h2>
+    <p class="body">For forty years, a phone was a drawer of apps you had to open, arrange and manage.
+      MikeOS turns that inside out. Instead of apps you operate, MikeOS runs a <b>living intelligence</b>
+      that understands your day — your places, your people, your rhythms — and quietly takes care of the
+      rest. The interface isn't a grid of icons. It's a conversation, and a thousand small things handled
+      before you ask.</p>
+    <p class="body">Underneath, every capability is its own <b>autonomous agent</b>: a small, focused mind
+      for your photos, your travel, your home, your music. Each one senses its corner of your world,
+      thinks, acts, remembers, and talks to the others — so a single moment, like arriving somewhere new,
+      ripples through everything at once.</p>
+  </section>
+
+  <section class="band">
+    <p class="kicker">How it works</p>
+    <h2>Perceive. Reason. Act. Remember.</h2>
+    <p class="body">Each agent runs the same gentle loop, continuously — not waiting for you to tap.</p>
+    <div class="loop">
+      <span><b>Perceive</b> — your world</span>
+      <span><b>Reason</b> — quietly, privately</span>
+      <span><b>Act</b> — on your behalf</span>
+      <span><b>Remember</b> — so it's smarter tomorrow</span>
+      <span><b>Share</b> — with your other agents</span>
+    </div>
+    <div class="grid" style="margin-top:26px">
+      <div class="c">
+        <div class="orb"></div>
+        <h3>On your device first</h3>
+        <p>The thinking happens on hardware you own, close to you — fast, private, and yours. The cloud
+          is a helper, never the landlord.</p>
+      </div>
+      <div class="c">
+        <div class="orb"></div>
+        <h3>Phone and computer as one</h3>
+        <p>Your devices share a single, continuous mind. Start on one, finish on the other, without a
+          seam or a sync button.</p>
+      </div>
+      <div class="c">
+        <div class="orb"></div>
+        <h3>Agents that cooperate</h3>
+        <p>A photo you take, a place you arrive, a song you love — one event, understood by every agent
+          that cares about it.</p>
+      </div>
+      <div class="c">
+        <div class="orb"></div>
+        <h3>Yours to carry forward</h3>
+        <p>Your memories and data belong to you. Export them, take them, delete them — no walled garden,
+          no ransom.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <p class="kicker">The promises</p>
+    <div class="promise">
+      <h2>No ads. Ever. In any MikeOS app.</h2>
+      <p>Your attention isn't a product we sell. MikeOS apps will never show you an ad. Third-party apps
+        you choose to install may — but any app carrying the <b>MikeOS&nbsp;Certified</b> badge is
+        guaranteed ad-free, respectful of your data, and honest about what it does.</p>
+      <span class="badge"><span class="dot"></span>MikeOS Certified · always ad-free</span>
+    </div>
+    <div class="grid" style="margin-top:20px">
+      <div class="c">
+        <div class="orb"></div>
+        <h3>Privacy by design</h3>
+        <p>What happens on your device stays on your device wherever it can. Nothing is quietly mined to
+          build a profile of you.</p>
+      </div>
+      <div class="c">
+        <div class="orb"></div>
+        <h3>You own it, fully</h3>
+        <p>One identity, held by you. Your data is scoped to you and portable — the account answers to
+          you and no one else.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <p class="kicker">Build on it</p>
+    <h2>An open home for honest apps.</h2>
+    <p class="body">MikeOS is an ecosystem, not a cul-de-sac. Developers can build agents that plug into
+      the same shared intelligence — and by earning <b>MikeOS Certified</b>, promise their users the same
+      thing we do: no ads, real privacy, no dark patterns. If that's the kind of software you want to
+      make, we'd love to hear from you.</p>
+    <div class="cta-row">
+      <a class="btn" href="/#order">Order MikeOS</a>
+      <a class="btn ghost" href="mailto:hello@osmike.com?subject=MikeOS%20Platform">Talk to us →</a>
+    </div>
+  </section>
+
+  <footer>
+    <a class="logo" href="/"><span class="mark"></span>MikeOS</a>
+    <div>A new world of AI-powered living.</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#order">Order</a>
+      <a href="mailto:hello@osmike.com">Contact</a>
+    </nav>
+  </footer>
+
+</div>
+</div>
+</body>
+</html>

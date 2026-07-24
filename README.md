@@ -12,9 +12,19 @@ The public marketing site for **MikeOS** — the AI-first phone and computer for
   `mikeos-architecture/docs/domain-management.md`.
 
 ```
-public/index.html        the site (self-contained HTML/CSS + Google Fonts)
+public/index.html        the landing page (self-contained HTML/CSS + Google Fonts)
+public/platform.html      the "Platform" page for the curious / technical ~3%
+public/img/               lifestyle photography (WebP) + product/og/favicon assets
 server/http_server.py     tiny FastAPI static server + /api/health
 ```
+
+Sections (index): hero + hero photo · "the shift" manifesto · feature cards · **journeys gallery**
+(one life, every moment) · **Order** (2 phones + 2 computers, included-vs-extra, MikeCloud storage
+tiers) · **no-ads promise** · closing CTA. All CTAs say **Order now** → `#order`.
+
+Imagery: warm "new dawn" lifestyle photography, generated with Grok (`grok-imagine-image`) to an
+art-direction brief (deliberately tech-free — the product is felt, never shown). JPEGs are converted
+to WebP (~77% smaller) via Pillow; regenerate with the scripts kept in the session scratchpad.
 
 Design: warm, luminous, editorial — a "new dawn" sunrise gradient, Fraunces display + Manrope body,
 big emotional headlines, generous space. Edit `public/index.html` and push to redeploy.
