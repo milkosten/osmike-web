@@ -14,7 +14,7 @@ app = FastAPI(title="osmike-web", docs_url=None, redoc_url=None, openapi_url=Non
 PUBLIC = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "public"))
 
 # Clean page routes -> static HTML files in public/.
-PAGES = {"services": "services.html", "business": "business.html", "developers": "developers.html"}
+PAGES = {"services": "services.html", "integrations": "integrations.html", "business": "business.html", "developers": "developers.html"}
 
 
 @app.get("/api/health")

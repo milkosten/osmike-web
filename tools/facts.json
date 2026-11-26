@@ -1,0 +1,2 @@
+{"checked": "2026-11-26", "jobs_open": "67,000", "companies_active": "860,000",
+ "_sources": "jobs: swedish-jobs-api /v1/jobs total 67,636 (105,033 ads merged); companies: leads API /leads/count status=active 864,431 (data 2026-11-23). Round DOWN when updating."}

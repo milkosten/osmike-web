@@ -276,3 +276,7 @@
     .search{max-width:none;flex-basis:100%}
     footer{flex-direction:column;align-items:flex-start}
   }
+
+  /* integrations: name chips (home teaser + "Already built") */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14.5px;color:var(--ink)}

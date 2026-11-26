@@ -59,6 +59,16 @@
    "public": true
   },
   {
+   "id": "jobs",
+   "name": "Jobs",
+   "group": "work",
+   "icon": "💼",
+   "line": "Search about 67,000 open jobs in Sweden with your agents, and hear when new ones match.",
+   "url": "/integrations#jobs",
+   "keywords": "jobs work career platsbanken sweden",
+   "public": true
+  },
+  {
    "id": "documents",
    "name": "Documents",
    "group": "work",
