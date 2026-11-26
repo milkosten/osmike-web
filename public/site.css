@@ -280,3 +280,9 @@
   /* integrations: name chips (home teaser + "Already built") */
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
   .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14.5px;color:var(--ink)}
+
+  /* line icons (tools/icons.py) instead of emoji */
+  .i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+  .ico{color:var(--ink)}
+  .card .ico .i{width:24px;height:24px}
+  .steps .i{width:18px;height:18px;vertical-align:-3px}

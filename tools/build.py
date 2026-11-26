@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate the static pages of www.osmike.com (header/footer shared). Output goes to public/."""
-import json, os, html
+import json, os, html, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import icons
 
 PUB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "public")
 ROOT = open(os.path.join(os.path.dirname(__file__), "root.css")).read()
@@ -114,8 +116,18 @@ COMMON_JS = """
 """
 
 
+_ALTS = sorted(((re.escape(k[:-1]) if k.endswith("\ufe0f") else re.escape(k)) + "\ufe0f?" for k in icons.EMOJI), key=len, reverse=True)
+EMOJI_RX = re.compile('(aria-hidden="true">)(' + "|".join(_ALTS) + ')(<)')
+EMOJI_NAME = {k.replace("\ufe0f", ""): v for k, v in icons.EMOJI.items()}
+
+
+def iconize(html_text):
+    """Emoji in icon slots -> line icons (emoji are empty squares without a colour-emoji font, e.g. Chrome on Linux)."""
+    return EMOJI_RX.sub(lambda m: m.group(1) + icons.use(EMOJI_NAME[m.group(2).replace("\ufe0f", "")]) + m.group(3), html_text)
+
+
 def page(name, title, desc, path, active, body, extra_js=""):
-    out = head(title, desc, path) + header(active) + '\n  <main id="main">\n' + body + "\n  </main>\n" + FOOTER + COMMON_JS + extra_js + "</body>\n</html>\n"
+    out = head(title, desc, path) + icons.sprite() + header(active) + '\n  <main id="main">\n' + iconize(body) + "\n  </main>\n" + FOOTER + COMMON_JS + extra_js + "</body>\n</html>\n"
     with open(os.path.join(PUB, name), "w") as f:
         f.write(out)
 
@@ -130,7 +142,7 @@ def mini(ids):
     for i in ids:
         s = BYID[i]
         assert s["public"], i
-        rows.append(f'<li><a href="{s["url"]}"><span class="ico" aria-hidden="true">{s["icon"]}</span>'
+        rows.append(f'<li><a href="{s["url"]}"><span class="ico" aria-hidden="true">{icons.use(s["icon"])}</span>'
                     f'<span><b>{html.escape(s["name"])}</b><span class="l">{html.escape(s["line"])}</span></span></a></li>')
     return "\n          ".join(rows)
 
@@ -373,7 +385,7 @@ services_js = r"""
       if(!items.length)return;
       n+=items.length;
       out+='<section class="svc-group"><h2>'+esc(g.name)+'</h2><p class="g-line">'+esc(g.line)+'</p><div class="svc-grid">'+
-        items.map(function(s){return '<a class="svc" href="'+esc(s.url)+'"><span class="ico" aria-hidden="true">'+s.icon+'</span><span><h3>'+esc(s.name)+'</h3><p>'+esc(s.line)+'</p><span class="host">'+esc(host(s.url))+'</span></span></a>'}).join('')+
+        items.map(function(s){return '<a class="svc" href="'+esc(s.url)+'"><span class="ico" aria-hidden="true"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-'+esc(s.icon)+'"/></svg></span><span><h3>'+esc(s.name)+'</h3><p>'+esc(s.line)+'</p><span class="host">'+esc(host(s.url))+'</span></span></a>'}).join('')+
         '</div></section>';
     });
     list.innerHTML=n?out:'<p class="empty">No service matches “'+esc(term)+'”.</p>';
@@ -590,7 +602,7 @@ def int_group(g):
     for x in g["items"]:
         link = ('<a class="more" href="%s">%s →</a>' % (x["url"], html.escape(x.get("link", "Open")))) if x.get("url") else ""
         cards.append('<div class="card rv"%s><span class="ico" aria-hidden="true">%s</span><h3>%s</h3><p>%s</p>%s</div>' % (
-            (' id="%s"' % x["id"]) if x.get("id") else "", x.get("icon", ""), html.escape(x["name"]), x["line"], link))
+            (' id="%s"' % x["id"]) if x.get("id") else "", icons.use(x["icon"]) if x.get("icon") else "", html.escape(x["name"]), x["line"], link))
     return ('\n  <section class="band" style="padding-top:30px" id="%s">\n    <p class="kicker rv">%s</p>\n    <h2 class="title rv">%s</h2>\n'
             '    <p class="intro rv">%s</p>\n    <div class="dev">%s</div>\n  </section>\n') % (g["id"], html.escape(g["kicker"]), html.escape(g["title"]), g["intro"], "\n".join(cards))
 

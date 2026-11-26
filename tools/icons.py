@@ -1,0 +1,85 @@
+"""Line icons for www.osmike.com (24x24, stroke, currentColor), replacing emoji: emoji render as empty squares on
+Linux/Windows machines without a colour-emoji font (Mike 2026-11-26, Chrome on Linux). One sprite per page;
+use with <svg class="i"><use href="#i-NAME"/></svg>."""
+
+ICONS = {
+    "calendar": '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+    "file": '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/>',
+    "sheet": '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/>',
+    "slides": '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8M8 12l3-3 2 2 3-3"/>',
+    "video": '<rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3"/>',
+    "mail": '<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/>',
+    "folder": '<path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+    "check": '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>',
+    "cards": '<rect x="7" y="4" width="11" height="15" rx="2" transform="rotate(8 12.5 11.5)"/><rect x="4" y="5" width="11" height="15" rx="2"/>',
+    "handshake": '<path d="M3 12l3-3 3 1 3-3 3 1 3 2 3-1"/><path d="M6 9v5l4 4 2-1 2 1 4-4v-4"/><path d="M10 14l2 2M12 12l2.5 2.5"/>',
+    "scroll": '<path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8"/><path d="M7 4a2 2 0 0 0-2 2v2h4V6a2 2 0 0 0-2-2zM9 20a2 2 0 0 1-2-2V8M11 9h5M11 12.5h5M11 16h3"/>',
+    "pen": '<path d="M15.5 4.5l4 4L9 19l-5 1 1-5z"/><path d="M13.5 6.5l4 4"/>',
+    "target": '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+    "briefcase": '<rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18"/>',
+    "sparkles": '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>',
+    "users": '<circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M16 14.6c2.6.1 4.4 1.7 5 4.4"/>',
+    "brain": '<path d="M9.5 4.5A2.5 2.5 0 0 0 7 7a2.5 2.5 0 0 0-2 4 2.5 2.5 0 0 0 1 4 2.5 2.5 0 0 0 3.5 3.5V4.5z"/><path d="M14.5 4.5A2.5 2.5 0 0 1 17 7a2.5 2.5 0 0 1 2 4 2.5 2.5 0 0 1-1 4 2.5 2.5 0 0 1-3.5 3.5V4.5z"/><path d="M9.5 4.5a2.5 2.5 0 0 1 5 0M9.5 18.5a2.5 2.5 0 0 0 5 0"/>',
+    "link": '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    "plug": '<path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/>',
+    "camera": '<path d="M4 8a2 2 0 0 1 2-2h2l1.5-2h5L16 6h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="12.5" r="3.5"/>',
+    "map": '<path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/>',
+    "cloud-sun": '<path d="M8 4.5V3M3.5 9H2M4.8 5.8L3.8 4.8M12.2 5.8l1-1"/><path d="M5.2 11A3.5 3.5 0 0 1 11.6 8"/><path d="M8 20a4 4 0 0 1-.4-8 5.5 5.5 0 0 1 10.6 1.5A3.3 3.3 0 0 1 17.5 20z"/>',
+    "newspaper": '<path d="M4 5h13v14a1.5 1.5 0 0 0 1.5 1.5H6A2 2 0 0 1 4 18.5z"/><path d="M17 9h3v9.5a1.5 1.5 0 0 1-3 0M7.5 8.5h6M7.5 12h6M7.5 15.5h4"/>',
+    "search": '<circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/>',
+    "globe": '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.5 3.5 5.5 3.5 8.5s-1 6-3.5 8.5c-2.5-2.5-3.5-5.5-3.5-8.5s1-6 3.5-8.5z"/>',
+    "mic": '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6"/>',
+    "music": '<path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/>',
+    "book": '<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/>',
+    "cart": '<path d="M3 4h2.5l2 11h10.5l2-7.5H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>',
+    "pot": '<path d="M4 10h16v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM2.5 10h19M9 6.5c0-1 1-1.5 1-2.5M13 6.5c0-1 1-1.5 1-2.5"/>',
+    "box": '<path d="M12 3l8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"/>',
+    "pin": '<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+    "compass": '<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+    "car": '<path d="M5 16V11l2-4.5h10l2 4.5v5"/><path d="M3.5 16h17v2.5h-17zM5 11h14"/><circle cx="7.5" cy="13.5" r=".6"/><circle cx="16.5" cy="13.5" r=".6"/>',
+    "wallet": '<path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16.5" height="11.5" rx="2.5"/><path d="M16.5 13.5h.5"/>',
+    "dna": '<path d="M7 3c0 6 10 6 10 12M17 21c0-6-10-6-10-12"/><path d="M8 6h8M8.5 17.5h7M9 12h6"/>',
+    "chart-up": '<path d="M4 4v16h16"/><path d="M7.5 15l4-4.5 3 3 5-6"/><path d="M15.5 7.5h4v4"/>',
+    "chat": '<path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-4.5 3.5V17H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 10h8M8 13h5"/>',
+    "key": '<circle cx="8" cy="15" r="4"/><path d="M11 12l8.5-8.5M16 7l2.5 2.5M18.5 4.5L20 6"/>',
+    "zap": '<path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/>',
+    "bot": '<rect x="4.5" y="8" width="15" height="11" rx="3"/><path d="M12 4.5V8M9.5 13h.01M14.5 13h.01M9.5 16.5h5"/><circle cx="12" cy="4" r="1"/>',
+    "satellite": '<path d="M13 7l4 4-6 6-4-4z"/><path d="M15 5l2-2 4 4-2 2M9 15l-2 2M4.5 13.5A6 6 0 0 0 10.5 19.5"/>',
+    "shield": '<path d="M12 3l7.5 3v5.5c0 4.5-3 8-7.5 9.5-4.5-1.5-7.5-5-7.5-9.5V6z"/><path d="M9 12l2 2 4-4"/>',
+    "tools": '<path d="M14.5 6.5a4 4 0 0 0-5.3 5L4 16.8V20h3.2l5.3-5.2a4 4 0 0 0 5-5.3l-2.5 2.5-2.5-.5-.5-2.5z"/>',
+    "palette": '<path d="M12 3.5a8.5 8.5 0 1 0 0 17c1.4 0 1.8-1 1.3-2-.6-1.2.1-2.5 1.6-2.5H17a3.5 3.5 0 0 0 3.5-3.5c0-5-3.8-9-8.5-9z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/>',
+    "gift": '<rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5V20h14v-7.5M12 8.5V20M12 8.5C10.5 4 7 4.5 7.5 6.5S12 8.5 12 8.5zM12 8.5c1.5-4.5 5-4 4.5-2S12 8.5 12 8.5z"/>',
+    "banknote": '<rect x="3" y="6.5" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v.01M17.5 14.5v.01"/>',
+    "bank": '<path d="M3.5 9L12 4l8.5 5zM5.5 9v8M10 9v8M14 9v8M18.5 9v8M3.5 20h17M4.5 17h15"/>',
+    "landmark": '<path d="M12 3.5l8 4.5H4zM6 8v9M10 8v9M14 8v9M18 8v9M4 17h16v3H4z"/>',
+    "send": '<path d="M21 3.5L10.5 14M21 3.5l-6.5 17-4-6.5-6.5-4z"/>',
+    "cog": '<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4L5.3 5.3"/>',
+    "terminal": '<rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M7 9.5l3 2.5-3 2.5M12.5 15h4.5"/>',
+    "puzzle": '<path d="M9 4.5h3a1.5 1.5 0 0 1 3 0h3a1 1 0 0 1 1 1v3a1.5 1.5 0 0 1 0 3v3a1 1 0 0 1-1 1h-3a1.5 1.5 0 0 0-3 0H9a1 1 0 0 1-1-1v-3a1.5 1.5 0 0 0 0-3v-3a1 1 0 0 1 1-1z"/>',
+    "receipt": '<path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 11.5h6M9 15h4"/>',
+    "google": '<path d="M20 12.2c0-.6-.1-1.2-.2-1.7H12v3.3h4.5a3.9 3.9 0 0 1-1.7 2.5v2h2.7c1.6-1.5 2.5-3.6 2.5-6.1z"/><path d="M12 20.5c2.3 0 4.2-.8 5.5-2.1l-2.7-2a5 5 0 0 1-7.5-2.7H4.6v2.1a8.5 8.5 0 0 0 7.4 4.7z"/><path d="M7.3 13.7a5 5 0 0 1 0-3.4V8.2H4.6a8.5 8.5 0 0 0 0 7.6z"/><path d="M12 6.9c1.3 0 2.4.5 3.3 1.3l2.4-2.4A8.4 8.4 0 0 0 4.6 8.2l2.7 2.1A5 5 0 0 1 12 6.9z"/>',
+    "heart": '<path d="M12 20s-7.5-4.5-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.5-7.5 10-7.5 10z"/>',
+    "thought": '<path d="M7 15a4 4 0 0 1-.5-8 5 5 0 0 1 9.5-1 4 4 0 0 1 1.5 7.8V14a3 3 0 0 1-3 3H9.5"/><circle cx="7" cy="19" r="1.3"/><circle cx="4.5" cy="21" r=".6"/>',
+    "antenna": '<path d="M12 12v9M8 21h8"/><circle cx="12" cy="10" r="1.6"/><path d="M8 6.5a5.5 5.5 0 0 0 0 7M16 6.5a5.5 5.5 0 0 1 0 7M5.2 4a9.5 9.5 0 0 0 0 12M18.8 4a9.5 9.5 0 0 1 0 12"/>',
+}
+
+EMOJI = {
+    "📅": "calendar", "📄": "file", "📊": "sheet", "📽️": "slides", "🎥": "video", "✉️": "mail", "🗂️": "folder",
+    "✅": "check", "🃏": "cards", "🤝": "handshake", "📜": "scroll", "✍️": "pen", "🎯": "target", "💼": "briefcase",
+    "✨": "sparkles", "👥": "users", "🧠": "brain", "🔗": "link", "🔌": "plug", "📷": "camera", "🗺️": "map",
+    "🌦️": "cloud-sun", "📰": "newspaper", "🔎": "search", "🌐": "globe", "🎙️": "mic", "🎵": "music", "📖": "book",
+    "🛒": "cart", "🍲": "pot", "🥫": "box", "📦": "box", "📍": "pin", "🧭": "compass", "🚗": "car", "💰": "wallet",
+    "🧬": "dna", "📈": "chart-up", "💬": "chat", "🔑": "key", "⚡": "zap", "🤖": "bot", "🛰️": "satellite",
+    "🛡️": "shield", "🛠️": "tools", "🎨": "palette", "🎁": "gift", "💶": "banknote", "🏦": "bank", "🏛️": "landmark",
+    "✈️": "send", "⚙️": "cog", "⌨️": "terminal", "🧩": "puzzle", "🧾": "receipt", "🟦": "google", "🫀": "heart",
+    "💭": "thought", "📡": "antenna",
+}
+
+
+def sprite():
+    return ('<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>' +
+            "".join('<symbol id="i-%s" viewBox="0 0 24 24">%s</symbol>' % (k, v) for k, v in ICONS.items()) + "</defs></svg>")
+
+
+def use(name):
+    return '<svg class="i" aria-hidden="true" focusable="false"><use href="#i-%s"/></svg>' % name

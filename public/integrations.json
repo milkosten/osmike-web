@@ -1,65 +1,206 @@
 {
-  "checked": "2026-11-26",
-  "groups": [
-    {"id": "accounts", "kicker": "Connect your accounts", "title": "Your accounts, working for you.",
-     "intro": "Connect once. You pick which of your agents may use each account.",
-     "items": [
-       {"name": "Google", "icon": "🟦", "chip": true, "url": "https://connect.osmike.com/google", "link": "Connect Google",
-        "line": "Gmail, Calendar and Drive of the Google accounts you choose. Your agents read them and can write e-mail drafts for you; nothing is sent. Contacts only if you allow it."},
-       {"name": "Telegram", "icon": "✈️", "chip": true, "url": "https://mesh.osmike.com/", "link": "Set up in Mesh",
-        "line": "Talk to your agents on Telegram with your own bot. Share your location and your agents can act when you arrive somewhere."},
-       {"name": "OsMike Mail", "icon": "✉️", "url": "https://mail.osmike.com/", "link": "Open Mail",
-        "line": "Your OsMike mailbox. Your agents can read it, sort it and tell you when something important arrives."},
-       {"name": "Bank accounts", "icon": "🏦",
-        "line": "Budget reads your bank transactions through Enable Banking. Not open to everyone yet."}
-     ]},
-    {"id": "any", "kicker": "Any service", "title": "Ask for any service with an API.",
-     "intro": "OsMike Connect builds integrations on request, from public data to your own business tools.",
-     "items": [
-       {"name": "Give the key in the chat", "icon": "🔑",
-        "line": "Paste the service's API key in the chat with your agent, or sign in to the service. The key is hidden in the chat and stored in your own vault."},
-       {"name": "Built and tested for you", "icon": "⚙️",
-        "line": "OsMike builds the integration and tests it with your key, often within minutes. Then your agents can use it."},
-       {"name": "You stay in control", "icon": "🛡️",
-        "line": "Your agents never see the key: every call is made for them on our servers. You decide whether they may only read or also change things."}
-     ]},
-    {"id": "ready", "kicker": "Already built", "title": "Ready to connect.", "style": "chips",
-     "intro": "Integrations built so far. Connect one with your own key, or ask for a new one.",
-     "items": [
-       {"name": "ElevenLabs", "chip": true, "line": "Voices and text to speech"},
-       {"name": "Groq", "chip": true, "line": "Fast AI models"},
-       {"name": "NVIDIA", "line": "AI models"},
-       {"name": "Cloudflare Workers AI", "line": "AI models"},
-       {"name": "Exa", "chip": true, "line": "Web search made for AI"},
-       {"name": "Jina Reader", "chip": true, "line": "Any web page as clean text"},
-       {"name": "Alpha Vantage", "chip": true, "line": "Share prices and market data"},
-       {"name": "Holded", "chip": true, "line": "Accounting and invoicing"},
-       {"name": "AirLabs Flights", "chip": true, "line": "Live flights"},
-       {"name": "Aviation Weather", "line": "Airport weather reports"},
-       {"name": "Open-Meteo", "chip": true, "line": "Weather forecasts"},
-       {"name": "NASA POWER", "line": "Solar and climate data"},
-       {"name": "Wikidata", "chip": true, "line": "Facts about everything"},
-       {"name": "PubChem", "chip": true, "line": "Chemistry"},
-       {"name": "CERN Open Data", "line": "Physics data"},
-       {"name": "Census Data API", "line": "US census"},
-       {"name": "Data USA", "line": "US statistics"},
-       {"name": "OpenAIRE", "line": "Research publications"},
-       {"name": "Digital Public Library of America", "line": "Library collections"},
-       {"name": "rss2json", "line": "News feeds"}
-     ]},
-    {"id": "data", "kicker": "Built in", "title": "Data your agents can search.",
-     "intro": "Included with every OsMike account. Nothing to connect.",
-     "items": [
-       {"id": "jobs", "name": "Swedish jobs", "icon": "💼", "url": "https://mesh.osmike.com/", "link": "Ask your agents",
-        "line": "About 67,000 open jobs from Platsbanken and six other job sites, copies merged. Your agents search them and tell you when new jobs match."},
-       {"id": "leads", "name": "Swedish companies", "icon": "🎯", "url": "https://leads.osmike.com/", "link": "Open Leads",
-        "line": "About 860,000 active companies with size, turnover, industry, place and who is hiring, from the Swedish company registers."},
-       {"name": "French and US companies", "icon": "🏛️",
-        "line": "The French company register, and US companies with their SEC filings and reported figures."},
-       {"name": "Share prices", "icon": "📈", "url": "https://stocks.osmike.com/", "link": "Open Stocks",
-        "line": "Live quotes, price history, exchange rates and valuations of US companies."},
-       {"name": "News, maps and weather", "icon": "🗺️", "url": "/services", "link": "See the services",
-        "line": "News from around the world, maps and places from OpenStreetMap, and weather forecasts for anywhere."}
-     ]}
-  ]
+ "checked": "2026-11-26",
+ "groups": [
+  {
+   "id": "accounts",
+   "kicker": "Connect your accounts",
+   "title": "Your accounts, working for you.",
+   "intro": "Connect once. You pick which of your agents may use each account.",
+   "items": [
+    {
+     "name": "Google",
+     "icon": "google",
+     "chip": true,
+     "url": "https://connect.osmike.com/google",
+     "link": "Connect Google",
+     "line": "Gmail, Calendar and Drive of the Google accounts you choose. Your agents read them and can write e-mail drafts for you; nothing is sent. Contacts only if you allow it."
+    },
+    {
+     "name": "Telegram",
+     "icon": "send",
+     "chip": true,
+     "url": "https://mesh.osmike.com/",
+     "link": "Set up in Mesh",
+     "line": "Talk to your agents on Telegram with your own bot. Share your location and your agents can act when you arrive somewhere."
+    },
+    {
+     "name": "OsMike Mail",
+     "icon": "mail",
+     "url": "https://mail.osmike.com/",
+     "link": "Open Mail",
+     "line": "Your OsMike mailbox. Your agents can read it, sort it and tell you when something important arrives."
+    },
+    {
+     "name": "Bank accounts",
+     "icon": "bank",
+     "line": "Budget reads your bank transactions through Enable Banking. Not open to everyone yet."
+    }
+   ]
+  },
+  {
+   "id": "any",
+   "kicker": "Any service",
+   "title": "Ask for any service with an API.",
+   "intro": "OsMike Connect builds integrations on request, from public data to your own business tools.",
+   "items": [
+    {
+     "name": "Give the key in the chat",
+     "icon": "key",
+     "line": "Paste the service's API key in the chat with your agent, or sign in to the service. The key is hidden in the chat and stored in your own vault."
+    },
+    {
+     "name": "Built and tested for you",
+     "icon": "cog",
+     "line": "OsMike builds the integration and tests it with your key, often within minutes. Then your agents can use it."
+    },
+    {
+     "name": "You stay in control",
+     "icon": "shield",
+     "line": "Your agents never see the key: every call is made for them on our servers. You decide whether they may only read or also change things."
+    }
+   ]
+  },
+  {
+   "id": "ready",
+   "kicker": "Already built",
+   "title": "Ready to connect.",
+   "style": "chips",
+   "intro": "Integrations built so far. Connect one with your own key, or ask for a new one.",
+   "items": [
+    {
+     "name": "ElevenLabs",
+     "chip": true,
+     "line": "Voices and text to speech"
+    },
+    {
+     "name": "Groq",
+     "chip": true,
+     "line": "Fast AI models"
+    },
+    {
+     "name": "NVIDIA",
+     "line": "AI models"
+    },
+    {
+     "name": "Cloudflare Workers AI",
+     "line": "AI models"
+    },
+    {
+     "name": "Exa",
+     "chip": true,
+     "line": "Web search made for AI"
+    },
+    {
+     "name": "Jina Reader",
+     "chip": true,
+     "line": "Any web page as clean text"
+    },
+    {
+     "name": "Alpha Vantage",
+     "chip": true,
+     "line": "Share prices and market data"
+    },
+    {
+     "name": "Holded",
+     "chip": true,
+     "line": "Accounting and invoicing"
+    },
+    {
+     "name": "AirLabs Flights",
+     "chip": true,
+     "line": "Live flights"
+    },
+    {
+     "name": "Aviation Weather",
+     "line": "Airport weather reports"
+    },
+    {
+     "name": "Open-Meteo",
+     "chip": true,
+     "line": "Weather forecasts"
+    },
+    {
+     "name": "NASA POWER",
+     "line": "Solar and climate data"
+    },
+    {
+     "name": "Wikidata",
+     "chip": true,
+     "line": "Facts about everything"
+    },
+    {
+     "name": "PubChem",
+     "chip": true,
+     "line": "Chemistry"
+    },
+    {
+     "name": "CERN Open Data",
+     "line": "Physics data"
+    },
+    {
+     "name": "Census Data API",
+     "line": "US census"
+    },
+    {
+     "name": "Data USA",
+     "line": "US statistics"
+    },
+    {
+     "name": "OpenAIRE",
+     "line": "Research publications"
+    },
+    {
+     "name": "Digital Public Library of America",
+     "line": "Library collections"
+    },
+    {
+     "name": "rss2json",
+     "line": "News feeds"
+    }
+   ]
+  },
+  {
+   "id": "data",
+   "kicker": "Built in",
+   "title": "Data your agents can search.",
+   "intro": "Included with every OsMike account. Nothing to connect.",
+   "items": [
+    {
+     "id": "jobs",
+     "name": "Swedish jobs",
+     "icon": "briefcase",
+     "url": "https://mesh.osmike.com/",
+     "link": "Ask your agents",
+     "line": "About 67,000 open jobs from Platsbanken and six other job sites, copies merged. Your agents search them and tell you when new jobs match."
+    },
+    {
+     "id": "leads",
+     "name": "Swedish companies",
+     "icon": "target",
+     "url": "https://leads.osmike.com/",
+     "link": "Open Leads",
+     "line": "About 860,000 active companies with size, turnover, industry, place and who is hiring, from the Swedish company registers."
+    },
+    {
+     "name": "French and US companies",
+     "icon": "landmark",
+     "line": "The French company register, and US companies with their SEC filings and reported figures."
+    },
+    {
+     "name": "Share prices",
+     "icon": "chart-up",
+     "url": "https://stocks.osmike.com/",
+     "link": "Open Stocks",
+     "line": "Live quotes, price history, exchange rates and valuations of US companies."
+    },
+    {
+     "name": "News, maps and weather",
+     "icon": "map",
+     "url": "/services",
+     "link": "See the services",
+     "line": "News from around the world, maps and places from OpenStreetMap, and weather forecasts for anywhere."
+    }
+   ]
+  }
+ ]
 }
