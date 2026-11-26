@@ -4,7 +4,10 @@ The public site for **OsMike**: one account for ~40 online services, with your o
 across them (people first), and **OsMike for companies** (white label). Plan: `plan/ECOSYSTEM-SITE.md`.
 
 - **Stack:** FastAPI serving `public/` (static). `$PORT` from env, no DB, no secrets.
-- **Deploy:** Railway auto-deploys from `main` (moving to relay 242). Don't push before hosting moves.
+- **Deploy:** on 242 (since 2026-11-26): `bash deploy/deploy.sh` (rsync to /opt/osmike-web, `docker compose up -d --build`,
+  container `osmike-web` on deploy_default). Caddy: `www.osmike.com` → osmike-web:8080, `osmike.com` → 308 to www.
+  Contact enquiries: /data/osmike-web/contact/submissions.jsonl (RAID6), turned into leads in Mike's CRM by the agent
+  `mike-osmike-web` (key only in /opt/osmike-web/deploy/.env). The Railway service is disconnected and has no deployment.
 
 ```
 public/index.html         Home (people first; companies teaser)
