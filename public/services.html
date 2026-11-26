@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Services — OsMike</title>
+<meta name="description" content="Every OsMike service: work, AI agents and everyday. 37 online services under one OsMike account." />
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#14110d" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+<link rel="canonical" href="https://www.osmike.com/services" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OsMike" />
+<meta property="og:url" content="https://www.osmike.com/services" />
+<meta property="og:title" content="Services — OsMike" />
+<meta property="og:description" content="Every OsMike service: work, AI agents and everyday. 37 online services under one OsMike account." />
+<meta property="og:image" content="https://www.osmike.com/img/hero-overlook.jpg" />
+<meta property="og:image:alt" content="A woman with a warm coffee watching the dawn break over the sea from a cliff" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Services — OsMike" />
+<meta name="twitter:description" content="Every OsMike service: work, AI agents and everyday. 37 online services under one OsMike account." />
+<meta name="twitter:image" content="https://www.osmike.com/img/hero-overlook.jpg" />
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23FF8A5B'/%3E%3Cstop offset='.5' stop-color='%23FF6FA5'/%3E%3Cstop offset='1' stop-color='%237C7CFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23FBFAF7'/%3E%3Ccircle cx='16' cy='16' r='8' fill='url(%23g)'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* OsMike design tokens (reference copy; keep byte-identical). The rest is in /site.css. */
+  :root{
+    --bg:#FBFAF7; --ink:#17130E; --muted:#6c6458; --faint:#9a9082;
+    --line:#ece6dc; --card:#ffffff;
+    --coral:#FF8A5B; --rose:#FF6FA5; --peri:#7C7CFF; --sky:#4FC4E8;
+    --accent:#E8553F;
+    --disp:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --grad:linear-gradient(100deg,var(--coral),var(--rose) 42%,var(--peri) 82%);
+  }
+</style>
+<link rel="stylesheet" href="/site.css" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="dawn" aria-hidden="true"></div>
+<div class="content">
+<div class="wrap">
+
+  <header class="top">
+    <a class="logo" href="/" aria-label="OsMike home"><span class="mark"></span>OsMike</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="/services" aria-current="page">Services</a>
+      <a href="/business">Companies</a>
+      <a href="/developers">Developers</a>
+      <a class="cta" href="https://account.osmike.com/">Sign in</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <section class="page-head">
+    <p class="eyebrow rv"><span class="d"></span>Services</p>
+    <h1 class="rv">Every OsMike service.</h1>
+    <p class="sub rv">All of them open with one OsMike account. Your agents can use them too.</p>
+  </section>
+
+  <section aria-label="Services">
+    <div class="filters" role="search">
+      <button class="chip" type="button" data-group="all" aria-pressed="true">All</button><button class="chip" type="button" data-group="work" aria-pressed="false">Work</button><button class="chip" type="button" data-group="agents" aria-pressed="false">AI agents</button><button class="chip" type="button" data-group="everyday" aria-pressed="false">Everyday</button>
+      <input class="search" type="search" id="q" placeholder="Search services" aria-label="Search services" autocomplete="off">
+    </div>
+    <div id="list" aria-live="polite"><p class="empty">Loading services…</p></div>
+    <noscript><p class="empty">This list needs JavaScript. The raw list is at <a href="/services.json">/services.json</a>.</p></noscript>
+  </section>
+
+  <section class="close">
+    <h2 class="rv">One account opens them all.</h2>
+    <div class="actions rv"><a class="btn" href="https://account.osmike.com/register">Create a free account</a></div>
+  </section>
+
+  </main>
+
+  <footer>
+    <a class="logo" href="/"><span class="mark"></span>OsMike</a>
+    <nav class="links" aria-label="Footer">
+      <a href="/services">Services</a>
+      <a href="/business">Companies</a>
+      <a href="/developers">Developers</a>
+      <a href="https://account.osmike.com/privacy">Privacy</a>
+      <a href="https://account.osmike.com/terms">Terms</a>
+    </nav>
+    <div class="legal"><span>© 2026 Ryan AI AB</span><a href="mailto:info@osmike.com">info@osmike.com</a></div>
+  </footer>
+
+</div>
+</div>
+
+<script>
+  (function(){
+    var b=document.querySelector('.burger'),m=document.getElementById('menu');
+    if(b&&m){b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open')){m.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}});}
+    var els=[].slice.call(document.querySelectorAll('.rv'));
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){ if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);} });
+    },{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+
+<script>
+(function(){
+  var list=document.getElementById('list'),q=document.getElementById('q'),chips=[].slice.call(document.querySelectorAll('.chip'));
+  var data=null,group='all';
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function host(u){try{return new URL(u).host}catch(e){return u}}
+  function render(){
+    if(!data)return;
+    var term=(q.value||'').trim().toLowerCase(),out='',n=0;
+    data.groups.forEach(function(g){
+      if(group!=='all'&&group!==g.id)return;
+      var items=data.services.filter(function(s){
+        if(!s.public||s.group!==g.id)return false;
+        if(!term)return true;
+        return (s.name+' '+s.line+' '+s.id+' '+(s.keywords||'')).toLowerCase().indexOf(term)>=0;
+      });
+      if(!items.length)return;
+      n+=items.length;
+      out+='<section class="svc-group"><h2>'+esc(g.name)+'</h2><p class="g-line">'+esc(g.line)+'</p><div class="svc-grid">'+
+        items.map(function(s){return '<a class="svc" href="'+esc(s.url)+'"><span class="ico" aria-hidden="true">'+s.icon+'</span><span><h3>'+esc(s.name)+'</h3><p>'+esc(s.line)+'</p><span class="host">'+esc(host(s.url))+'</span></span></a>'}).join('')+
+        '</div></section>';
+    });
+    list.innerHTML=n?out:'<p class="empty">No service matches “'+esc(term)+'”.</p>';
+  }
+  chips.forEach(function(c){c.addEventListener('click',function(){group=c.getAttribute('data-group');
+    chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});render();});});
+  q.addEventListener('input',render);
+  fetch('/services.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+    .then(function(d){data=d;render();})
+    .catch(function(){list.innerHTML='<p class="empty">The list could not be loaded. Try again, or open <a href="/services.json">/services.json</a>.</p>';});
+})();
+</script>
+</body>
+</html>

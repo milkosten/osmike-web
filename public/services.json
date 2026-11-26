@@ -1,0 +1,442 @@
+{
+ "updated": "2026-11-26",
+ "groups": [
+  {
+   "id": "work",
+   "name": "Work",
+   "line": "Customers, documents, meetings and the rest of your working day."
+  },
+  {
+   "id": "agents",
+   "name": "AI agents",
+   "line": "Your own agents, the skills and roles they use, and ways to build on them."
+  },
+  {
+   "id": "everyday",
+   "name": "Everyday",
+   "line": "Photos, maps, food, money, travel and the news."
+  }
+ ],
+ "services": [
+  {
+   "id": "crm",
+   "name": "OsMike CRM",
+   "group": "work",
+   "icon": "🤝",
+   "line": "Your customers, meetings, documents and contracts in one place.",
+   "url": "https://crm.osmike.com/",
+   "keywords": "customers sales",
+   "public": true
+  },
+  {
+   "id": "contracts",
+   "name": "Contracts",
+   "group": "work",
+   "icon": "📜",
+   "line": "Write contracts, send them for signing and keep track of their dates.",
+   "url": "https://contracts.osmike.com/",
+   "keywords": "agreements",
+   "public": true
+  },
+  {
+   "id": "sign",
+   "name": "Sign",
+   "group": "work",
+   "icon": "✍️",
+   "line": "Send a document for signing. People sign with a finger and only need the link.",
+   "url": "https://sign.osmike.com/",
+   "keywords": "e-signature signature",
+   "public": true
+  },
+  {
+   "id": "leads",
+   "name": "Leads",
+   "group": "work",
+   "icon": "🎯",
+   "line": "Find Swedish companies to sell to by industry, size, place and hiring, and add them to your CRM.",
+   "url": "https://leads.osmike.com/",
+   "keywords": "companies sweden sales prospects",
+   "public": true
+  },
+  {
+   "id": "documents",
+   "name": "Documents",
+   "group": "work",
+   "icon": "📄",
+   "line": "Write and edit documents in the browser.",
+   "url": "https://documents.osmike.com/",
+   "keywords": "office word text",
+   "public": true
+  },
+  {
+   "id": "spreadsheet",
+   "name": "Spreadsheets",
+   "group": "work",
+   "icon": "📊",
+   "line": "Spreadsheets in the browser.",
+   "url": "https://spreadsheet.osmike.com/",
+   "keywords": "office excel sheet",
+   "public": true
+  },
+  {
+   "id": "presentation",
+   "name": "Presentations",
+   "group": "work",
+   "icon": "📽️",
+   "line": "Presentations in the browser.",
+   "url": "https://presentation.osmike.com/",
+   "keywords": "office slides",
+   "public": true
+  },
+  {
+   "id": "calendar",
+   "name": "Calendar",
+   "group": "work",
+   "icon": "📅",
+   "line": "Your calendar with day, week and month views, repeating events and invitations.",
+   "url": "https://calendar.osmike.com/",
+   "keywords": "events schedule",
+   "public": true
+  },
+  {
+   "id": "meetings",
+   "name": "Meetings",
+   "group": "work",
+   "icon": "🎥",
+   "line": "Video meetings in the browser, with a transcript and summary afterwards.",
+   "url": "https://meetings.osmike.com/",
+   "keywords": "video call",
+   "public": true
+  },
+  {
+   "id": "mail",
+   "name": "Mail",
+   "group": "work",
+   "icon": "✉️",
+   "line": "Your OsMike inbox on the web.",
+   "url": "https://mail.osmike.com/",
+   "keywords": "email inbox",
+   "public": true
+  },
+  {
+   "id": "files",
+   "name": "Files",
+   "group": "work",
+   "icon": "🗂️",
+   "line": "Your drive: keep, organise and share your files.",
+   "url": "https://files.osmike.com/",
+   "keywords": "drive storage",
+   "public": true
+  },
+  {
+   "id": "tasks",
+   "name": "Tasks",
+   "group": "work",
+   "icon": "✅",
+   "line": "Tasks, roadmaps and deadlines, shared with your agents.",
+   "url": "https://tasks.osmike.com/",
+   "keywords": "todo",
+   "public": true
+  },
+  {
+   "id": "deck",
+   "name": "Decision Deck",
+   "group": "work",
+   "icon": "🃏",
+   "line": "Decisions your agents need from you, as cards you swipe.",
+   "url": "https://deck.osmike.com/",
+   "keywords": "decide",
+   "public": true
+  },
+  {
+   "id": "mesh",
+   "name": "Mesh",
+   "group": "agents",
+   "icon": "✨",
+   "line": "Tell Mesh what you want help with. It creates AI agents that work on it and answer you.",
+   "url": "https://mesh.osmike.com/",
+   "keywords": "agents ai chat telegram",
+   "public": true
+  },
+  {
+   "id": "rolez",
+   "name": "Rolez",
+   "group": "agents",
+   "icon": "👥",
+   "line": "Ready roles for agents, and teams of five: a lead and four specialists.",
+   "url": "https://rolez.osmike.com/",
+   "keywords": "teams roles",
+   "public": true
+  },
+  {
+   "id": "skillz",
+   "name": "Skillz",
+   "group": "agents",
+   "icon": "🧠",
+   "line": "A library of reviewed skills your agents can install.",
+   "url": "https://skillz.osmike.com/",
+   "keywords": "skills",
+   "public": true
+  },
+  {
+   "id": "connect",
+   "name": "Connect",
+   "group": "agents",
+   "icon": "🔗",
+   "line": "Connect your Google and other accounts so your agents can work with them.",
+   "url": "https://connect.osmike.com/",
+   "keywords": "google gmail drive integrations",
+   "public": true
+  },
+  {
+   "id": "personal-api",
+   "name": "Personal API",
+   "group": "agents",
+   "icon": "🔌",
+   "line": "Use your agents from your own code, the command line or MCP, or bring your own agent.",
+   "url": "https://mesh.osmike.com/api/docs",
+   "keywords": "api developers mcp cli",
+   "public": true
+  },
+  {
+   "id": "photos",
+   "name": "Photos",
+   "group": "everyday",
+   "icon": "📷",
+   "line": "Your photo library, private to your account.",
+   "url": "https://photos.osmike.com/",
+   "keywords": "pictures images",
+   "public": true
+  },
+  {
+   "id": "maps",
+   "name": "Maps",
+   "group": "everyday",
+   "icon": "🗺️",
+   "line": "Maps with place search and directions.",
+   "url": "https://maps.osmike.com/",
+   "keywords": "directions route",
+   "public": true
+  },
+  {
+   "id": "weather",
+   "name": "Weather",
+   "group": "everyday",
+   "icon": "🌦️",
+   "line": "Hourly and 7-day forecasts for anywhere on Earth. No trackers.",
+   "url": "https://weather.osmike.com/",
+   "keywords": "forecast",
+   "public": true
+  },
+  {
+   "id": "news",
+   "name": "News",
+   "group": "everyday",
+   "icon": "📰",
+   "line": "World news by topic, summarised and linked back to the newsrooms that reported it.",
+   "url": "https://news.osmike.com/",
+   "keywords": "headlines",
+   "public": true
+  },
+  {
+   "id": "search",
+   "name": "Search",
+   "group": "everyday",
+   "icon": "🔎",
+   "line": "Answers from Wikipedia and our own index of public sites. No tracking, no account needed.",
+   "url": "https://search.osmike.com/",
+   "keywords": "web",
+   "public": true
+  },
+  {
+   "id": "translate",
+   "name": "Translate",
+   "group": "everyday",
+   "icon": "🌐",
+   "line": "Translate text between languages.",
+   "url": "https://translate.osmike.com/",
+   "keywords": "language",
+   "public": true
+  },
+  {
+   "id": "voice",
+   "name": "Voice",
+   "group": "everyday",
+   "icon": "🎙️",
+   "line": "Turn text into natural speech in hundreds of languages, or clone a voice.",
+   "url": "https://voice.osmike.com/",
+   "keywords": "speech tts",
+   "public": true
+  },
+  {
+   "id": "music",
+   "name": "Music",
+   "group": "everyday",
+   "icon": "🎵",
+   "line": "Your music library, playlists and listening history.",
+   "url": "https://music.osmike.com/",
+   "keywords": "songs playlists",
+   "public": true
+  },
+  {
+   "id": "stories",
+   "name": "Stories",
+   "group": "everyday",
+   "icon": "📖",
+   "line": "Stories about the places along your drive.",
+   "url": "https://stories.osmike.com/",
+   "keywords": "road trip",
+   "public": true
+  },
+  {
+   "id": "shopping",
+   "name": "Shopping",
+   "group": "everyday",
+   "icon": "🛒",
+   "line": "Shopping lists you can share.",
+   "url": "https://shopping.osmike.com/",
+   "keywords": "groceries list",
+   "public": true
+  },
+  {
+   "id": "recipes",
+   "name": "Recipes",
+   "group": "everyday",
+   "icon": "🍲",
+   "line": "Keep your recipes, import them from a web page and share them.",
+   "url": "https://recipes.osmike.com/",
+   "keywords": "cooking food",
+   "public": true
+  },
+  {
+   "id": "products",
+   "name": "Products",
+   "group": "everyday",
+   "icon": "🥫",
+   "line": "Five million food products: ingredients, nutrition, better choices and store prices.",
+   "url": "https://products.osmike.com/",
+   "keywords": "food nutrition",
+   "public": true
+  },
+  {
+   "id": "local",
+   "name": "Local",
+   "group": "everyday",
+   "icon": "📍",
+   "line": "Find places near you, see opening hours and plan an evening out.",
+   "url": "https://local.osmike.com/",
+   "keywords": "restaurants nearby",
+   "public": true
+  },
+  {
+   "id": "guide",
+   "name": "Guide",
+   "group": "everyday",
+   "icon": "🧭",
+   "line": "Facts about places, and what is worth seeing along a route.",
+   "url": "https://guide.osmike.com/",
+   "keywords": "travel places",
+   "public": true
+  },
+  {
+   "id": "trips",
+   "name": "Trips",
+   "group": "everyday",
+   "icon": "🚗",
+   "line": "Your drives by month, each with a map and totals.",
+   "url": "https://trips.osmike.com/",
+   "keywords": "driving car",
+   "public": true
+  },
+  {
+   "id": "budget",
+   "name": "Budget",
+   "group": "everyday",
+   "icon": "💰",
+   "line": "Budgets for you, your household, your company, a project or an event.",
+   "url": "https://budget.osmike.com/",
+   "keywords": "money finance",
+   "public": true
+  },
+  {
+   "id": "dna",
+   "name": "DNA",
+   "group": "everyday",
+   "icon": "🧬",
+   "line": "Upload your raw DNA file and get your ancestry, traits and more, explained.",
+   "url": "https://dna.osmike.com/",
+   "keywords": "genetics ancestry",
+   "public": true
+  },
+  {
+   "id": "stocks",
+   "name": "Stocks",
+   "group": "everyday",
+   "icon": "📈",
+   "line": "The financial history of US public companies, from our own copy of SEC EDGAR.",
+   "url": "https://stocks.osmike.com/",
+   "keywords": "finance companies",
+   "public": true
+  },
+  {
+   "id": "chat",
+   "name": "Chat",
+   "group": "everyday",
+   "icon": "💬",
+   "line": "Chat with other OsMike people in the browser.",
+   "url": "https://chat.osmike.com/",
+   "keywords": "messages messenger",
+   "public": true
+  },
+  {
+   "id": "devices",
+   "name": "Devices",
+   "group": "everyday",
+   "icon": "📡",
+   "line": "Not shown on the public site.",
+   "url": "https://devices.osmike.com/",
+   "keywords": "",
+   "public": false
+  },
+  {
+   "id": "mind",
+   "name": "Mind",
+   "group": "everyday",
+   "icon": "💭",
+   "line": "Not shown on the public site.",
+   "url": "https://mind.osmike.com/",
+   "keywords": "",
+   "public": false
+  },
+  {
+   "id": "body",
+   "name": "Body",
+   "group": "everyday",
+   "icon": "🫀",
+   "line": "Not shown on the public site.",
+   "url": "https://body.osmike.com/",
+   "keywords": "",
+   "public": false
+  },
+  {
+   "id": "lingo",
+   "name": "Lingo",
+   "group": "everyday",
+   "icon": "🌐",
+   "line": "Same service as Translate on another address; not shown separately.",
+   "url": "https://lingo.osmike.com/",
+   "keywords": "",
+   "public": false
+  },
+  {
+   "id": "apps",
+   "name": "Apps",
+   "group": "agents",
+   "icon": "📦",
+   "line": "Not shown on the public site.",
+   "url": "https://apps.osmike.com/",
+   "keywords": "",
+   "public": false
+  }
+ ]
+}

@@ -1,30 +1,23 @@
-# osmike-web
+# osmike-web — www.osmike.com
 
-The public marketing site for **MikeOS** — the AI-first phone and computer for a freer, smoother life.
+The public site for **OsMike**: one account for ~40 online services, with your own AI agents that work
+across them (people first), and **OsMike for companies** (white label). Plan: `plan/ECOSYSTEM-SITE.md`.
 
-- **Live:** https://www.osmike.com (+ apex https://osmike.com)
-- **Story:** MikeOS is a complete new end-user experience — a consumer alternative to Apple/Google
-  phones + OS + computers, where AI isn't an app, it's the whole experience. Sells **freedom + AI +
-  a life that just flows** — deliberately non-technical (the platform/backend is a quiet "Platform"
-  footer link for the ~3% who want it).
-- **Stack:** FastAPI serving `public/` (static). Nixpacks-only, `$PORT` from env, no DB, no secrets.
-- **Deploy:** Railway (workspace SaaSRyan), auto-deploys from `main`. DNS: Cloudflare — see
-  `mikeos-architecture/docs/domain-management.md`.
+- **Stack:** FastAPI serving `public/` (static). `$PORT` from env, no DB, no secrets.
+- **Deploy:** Railway auto-deploys from `main` (moving to relay 242). Don't push before hosting moves.
 
 ```
-public/index.html        the landing page (self-contained HTML/CSS + Google Fonts)
-public/platform.html      the "Platform" page for the curious / technical ~3%
-public/img/               lifestyle photography (WebP) + product/og/favicon assets
-server/http_server.py     tiny FastAPI static server + /api/health
+public/index.html         Home (people first; companies teaser)
+public/services.html      /services: every public service, grouped + filter; reads services.json
+public/services.json      the service list (id, name, group, icon, line, url, keywords, public)
+public/business.html      /business: white label + contact form (POST /api/contact, JSON)
+public/developers.html    /developers: Personal API, bring your own agent, osmike CLI + MCP, Skillz
+public/site.css           shared styles; starts with the OsMike design tokens
+public/img/               lifestyle photography (WebP) + og/favicon assets
+server/http_server.py     static server, clean routes, /platform -> /developers, /api/health
 ```
 
-Sections (index): hero + hero photo · "the shift" manifesto · feature cards · **journeys gallery**
-(one life, every moment) · **Order** (2 phones + 2 computers, included-vs-extra, MikeCloud storage
-tiers) · **no-ads promise** · closing CTA. All CTAs say **Order now** → `#order`.
-
-Imagery: warm "new dawn" lifestyle photography, generated with Grok (`grok-imagine-image`) to an
-art-direction brief (deliberately tech-free — the product is felt, never shown). JPEGs are converted
-to WebP (~77% smaller) via Pillow; regenerate with the scripts kept in the session scratchpad.
-
-Design: warm, luminous, editorial — a "new dawn" sunrise gradient, Fraunces display + Manrope body,
-big emotional headlines, generous space. Edit `public/index.html` and push to redeploy.
+Rules: the `:root` token block (top of `site.css` and inline in every page) is copied by other OsMike
+sites: keep it byte-identical; add new tokens in the second `:root` block. Name is **OsMike** everywhere.
+No hardware, prices or orders. No external scripts except Google Fonts. Each page must work at 390 px.
+To add or hide a service, edit `services.json` (`public: false` hides it).
