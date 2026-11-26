@@ -675,15 +675,19 @@ privacy_body = """
     <table>
       <tr><th>Who</th><th>What for</th><th>Where</th></tr>
       <tr><td>Hetzner</td><td>Our servers: the services, databases and files</td><td>Germany (EU)</td></tr>
-      <tr><td>Ryan AI AB's own computers</td><td>Speech to text, some AI models</td><td>Sweden</td></tr>
+      <tr><td>Ryan AI AB's own computers</td><td>The agents (their memory and conversations), speech to text and some AI
+        models</td><td>Sweden</td></tr>
       <tr><td>OpenAI</td><td>The AI model your agents think with: the messages and data an agent works on are sent to it
         for that task</td><td>USA</td></tr>
       <tr><td>Z.ai</td><td>Some AI features, such as choosing which agent a message is for, and translations</td>
         <td>Outside the EU</td></tr>
-      <tr><td>Railway</td><td>A few services that have not moved to our own servers yet</td><td>Cloud provider</td></tr>
+      <tr><td>Railway</td><td>A few services that have not moved to our own servers yet</td><td>USA</td></tr>
+      <tr><td>GitHub</td><td>Stores each agent's workspace in a private repository, including the agent's brief, which
+        can contain your own words (what you asked for help with)</td><td>USA</td></tr>
       <tr><td>Google, Telegram, your bank (via Enable Banking)</td><td>Only if you connect them</td><td>Per that service</td></tr>
     </table>
-    <p>Transfers outside the EU rely on the EU standard contractual clauses or the EU–US Data Privacy Framework.</p>
+    <p>Some of the services above are outside the EU (in the USA, and Z.ai outside the EU), so data you send to your
+      agents may be processed there. We only send what the task needs.</p>
 
     <h2>How long we keep it</h2>
     <p>As long as you have your account. When you delete something, it is deleted. When you delete your account,
@@ -692,8 +696,9 @@ privacy_body = """
 
     <h2>Your rights</h2>
     <ul>
-      <li><strong>Get a copy</strong> of your data: <a href="https://account.osmike.com">account.osmike.com</a> →
-        Privacy &amp; your data → Export.</li>
+      <li><strong>Get a copy</strong> of your account data (profile, linked devices, sign-ins and connected apps):
+        <a href="https://account.osmike.com">account.osmike.com</a> → Privacy &amp; your data → Export. For a copy of
+        anything else (messages, files, documents, mail…), write to <a href="mailto:info@osmike.com">info@osmike.com</a>.</li>
       <li><strong>Delete your account:</strong> in the OsMike app (menu → Delete account) or at account.osmike.com.</li>
       <li><strong>Correct, restrict or object:</strong> write to <a href="mailto:info@osmike.com">info@osmike.com</a>.</li>
       <li>You can complain to the Swedish Authority for Privacy Protection (IMY), <a href="https://www.imy.se">imy.se</a>.</li>
