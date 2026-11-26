@@ -1,0 +1,18 @@
+# /opt/osmike-web on 242. Data (contact enquiries) on the RAID6: /data/osmike-web.
+services:
+  osmike-web:
+    build: ..
+    image: osmike-web:latest
+    container_name: osmike-web
+    restart: unless-stopped
+    env_file: .env            # OSMIKE_WEB_A2A_KEY (never in git)
+    environment:
+      CONTACT_DIR: /data/contact
+    volumes:
+      - /data/osmike-web:/data
+    mem_limit: 256m
+    cpus: 0.5
+    networks: [deploy_default]
+networks:
+  deploy_default:
+    external: true

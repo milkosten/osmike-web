@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 /opt/venv/
 .venv/
+deploy/.env
+.env

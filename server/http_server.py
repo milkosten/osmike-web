@@ -52,4 +52,8 @@ async def order() -> RedirectResponse:
 
 
 # Serve the static site at the root; index.html is the default document.
+# POST /api/contact: the "OsMike for companies" form -> a lead in Mike's CRM (server/contact.py). Before the static mount.
+from server.contact import router as contact_router  # noqa: E402
+app.include_router(contact_router)
+
 app.mount("/", StaticFiles(directory=PUBLIC, html=True), name="static")
