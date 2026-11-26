@@ -89,8 +89,9 @@ FOOTER = """
       <a href="/integrations">Integrations</a>
       <a href="/business">Companies</a>
       <a href="/developers">Developers</a>
-      <a href="https://account.osmike.com/privacy">Privacy</a>
-      <a href="https://account.osmike.com/terms">Terms</a>
+      <a href="/support">Help</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
     </nav>
     <div class="legal"><span>© 2026 Ryan AI AB</span><a href="mailto:info@osmike.com">info@osmike.com</a></div>
   </footer>
@@ -626,3 +627,145 @@ page("integrations.html", "Integrations — OsMike",
      "/integrations", "integrations", int_body)
 
 print("ok")
+
+# ---------------------------------------------------------------- Privacy, terms, support (Mike 2026-11-26: App Store needs them)
+UPDATED = "26 November 2026"
+
+privacy_body = """
+  <section class="page-head">
+    <p class="eyebrow rv"><span class="d"></span>Privacy</p>
+    <h1 class="rv">Your data is yours.</h1>
+    <p class="sub rv">What OsMike keeps about you, why, where it is processed, and how you get it out or delete it.</p>
+  </section>
+  <section class="prose">
+    <p class="meta">Last updated """ + UPDATED + """. Applies to every OsMike service, the OsMike apps and Mesh.</p>
+
+    <h2>Who is responsible</h2>
+    <p>OsMike is run by <strong>Ryan AI AB</strong>, Sweden, which is the data controller for your account and the data
+      you keep in OsMike. Questions, requests and complaints: <a href="mailto:info@osmike.com">info@osmike.com</a>.</p>
+
+    <h2>What we keep</h2>
+    <ul>
+      <li><strong>Your account:</strong> username and OsMike e-mail address, a backup e-mail address, your password (only
+        as a hash), and when you accepted the terms.</li>
+      <li><strong>What you put in the services:</strong> for example your messages to agents, mail, files, documents,
+        calendar, contacts, tasks and photos. You decide what goes in.</li>
+      <li><strong>Your agents:</strong> their instructions, their conversations with you and the notes they keep so they
+        can help you over time.</li>
+      <li><strong>Voice messages</strong> in the apps: the recording is turned into text on our own computers and then
+        deleted. Only the text is kept, as an ordinary message.</li>
+      <li><strong>Technical logs:</strong> sign-ins, errors and usage counts, to keep the services safe and working.
+        Logs are kept for a limited time.</li>
+    </ul>
+
+    <h2>What we never do</h2>
+    <ul>
+      <li>No ads, and no selling or renting of your data.</li>
+      <li>No tracking across other companies' apps or websites.</li>
+      <li>Your agents work for you only. An agent someone shares with you cannot read the owner's mail, files, calendar,
+        photos or location on your behalf, and the other way round.</li>
+    </ul>
+
+    <h2>Why we process it</h2>
+    <p>To give you the services you asked for (the agreement with you), to keep them secure and fix faults (our
+      legitimate interest), and when the law requires it. Connections to other services, such as Google, happen only
+      when you turn them on, and you can turn them off again.</p>
+
+    <h2>Where it is processed</h2>
+    <table>
+      <tr><th>Who</th><th>What for</th><th>Where</th></tr>
+      <tr><td>Hetzner</td><td>Our servers: the services, databases and files</td><td>Germany (EU)</td></tr>
+      <tr><td>Ryan AI AB's own computers</td><td>Speech to text, some AI models</td><td>Sweden</td></tr>
+      <tr><td>OpenAI</td><td>The AI model your agents think with: the messages and data an agent works on are sent to it
+        for that task</td><td>USA</td></tr>
+      <tr><td>Z.ai</td><td>Some AI features, such as choosing which agent a message is for, and translations</td>
+        <td>Outside the EU</td></tr>
+      <tr><td>Railway</td><td>A few services that have not moved to our own servers yet</td><td>Cloud provider</td></tr>
+      <tr><td>Google, Telegram, your bank (via Enable Banking)</td><td>Only if you connect them</td><td>Per that service</td></tr>
+    </table>
+    <p>Transfers outside the EU rely on the EU standard contractual clauses or the EU–US Data Privacy Framework.</p>
+
+    <h2>How long we keep it</h2>
+    <p>As long as you have your account. When you delete something, it is deleted. When you delete your account,
+      your data is deleted from our systems. Copies in backups disappear when those backups are replaced. We keep only what
+      the law requires.</p>
+
+    <h2>Your rights</h2>
+    <ul>
+      <li><strong>Get a copy</strong> of your data: <a href="https://account.osmike.com">account.osmike.com</a> →
+        Privacy &amp; your data → Export.</li>
+      <li><strong>Delete your account:</strong> in the OsMike app (menu → Delete account) or at account.osmike.com.</li>
+      <li><strong>Correct, restrict or object:</strong> write to <a href="mailto:info@osmike.com">info@osmike.com</a>.</li>
+      <li>You can complain to the Swedish Authority for Privacy Protection (IMY), <a href="https://www.imy.se">imy.se</a>.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>OsMike is not meant for children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>When this policy changes, the date at the top changes.</p>
+  </section>
+"""
+page("privacy.html", "Privacy — OsMike", "How OsMike handles your data: what we keep, why, where it is processed, and your rights.",
+     "/privacy", "", privacy_body)
+
+terms_body = """
+  <section class="page-head">
+    <p class="eyebrow rv"><span class="d"></span>Terms</p>
+    <h1 class="rv">Terms of use</h1>
+    <p class="sub rv">The agreement between you and Ryan AI AB when you use OsMike.</p>
+  </section>
+  <section class="prose">
+    <p class="meta">Last updated """ + UPDATED + """.</p>
+    <h2>The service</h2>
+    <p>OsMike is a set of online services under one account, with AI agents that work for you, provided by Ryan AI AB,
+      Sweden. The services are free today. We develop them continuously, so features may change, and we may pause or
+      end a service; if that affects your data, we tell you first so you can export it.</p>
+    <h2>Your account</h2>
+    <p>Keep your password to yourself. You are responsible for what happens in your account, including what your agents
+      do on your instructions. You must be at least 13 years old.</p>
+    <h2>Your content</h2>
+    <p>What you put in OsMike stays yours. You give us the right to store and process it only to run the services for
+      you, as described in the <a href="/privacy">privacy policy</a>.</p>
+    <h2>AI agents</h2>
+    <p>Agents can be wrong. Check what matters before you rely on it, especially health, legal and money questions.
+      Agents act only within the access you give them.</p>
+    <h2>Fair use</h2>
+    <p>Do not use OsMike to break the law, to harm others, to send spam, or to attack or overload the services.
+      We may stop accounts that do.</p>
+    <h2>Liability</h2>
+    <p>The services are provided as they are. We do our best to keep them running and your data safe, but we are not
+      liable for indirect losses, as far as the law allows. Your rights as a consumer under Swedish law are not limited.</p>
+    <h2>Ending</h2>
+    <p>You can delete your account at any time, in the app or at account.osmike.com. Swedish law applies.</p>
+    <h2>Contact</h2>
+    <p><a href="mailto:info@osmike.com">info@osmike.com</a></p>
+  </section>
+"""
+page("terms.html", "Terms — OsMike", "The terms of use for OsMike.", "/terms", "", terms_body)
+
+support_body = """
+  <section class="page-head">
+    <p class="eyebrow rv"><span class="d"></span>Help</p>
+    <h1 class="rv">How can we help?</h1>
+    <p class="sub rv">Write to <a href="mailto:info@osmike.com">info@osmike.com</a>. A person answers, usually within a working day.</p>
+  </section>
+  <section class="prose">
+    <h2>Getting started</h2>
+    <p>Create a free account at <a href="https://account.osmike.com">account.osmike.com</a>, or in the OsMike app.
+      Then say what you want help with, by typing or speaking, and OsMike makes the right agents for you.</p>
+    <h2>Talking to your agents</h2>
+    <p>Open an agent and write, or tap the microphone, speak, and tap again to send. Your agents also work across your
+      calendar, mail, files and the other OsMike services, and you can reach them on the web at
+      <a href="https://mesh.osmike.com">mesh.osmike.com</a>.</p>
+    <h2>Forgot your password</h2>
+    <p>Write to <a href="mailto:info@osmike.com">info@osmike.com</a> from the backup e-mail address you gave when you
+      signed up, and we help you get back in.</p>
+    <h2>Delete your account</h2>
+    <p>In the OsMike app: menu (the round logo, top right) → <strong>Delete account</strong>, then type your e-mail
+      address to confirm. Or at account.osmike.com. This deletes your account and everything in it and cannot be undone.</p>
+    <h2>Your data</h2>
+    <p>See the <a href="/privacy">privacy policy</a>. You can export a copy of your data at account.osmike.com.</p>
+  </section>
+"""
+page("support.html", "Help — OsMike", "Help with OsMike: getting started, agents, password, deleting your account.", "/support", "", support_body)

@@ -286,3 +286,15 @@
   .ico{color:var(--ink)}
   .card .ico .i{width:24px;height:24px}
   .steps .i{width:18px;height:18px;vertical-align:-3px}
+
+  /* legal & help pages (privacy, terms, support) */
+  .prose{max-width:760px;margin:0 auto;padding:10px 0 70px;font-size:17px;line-height:1.65}
+  .prose h2{font-size:22px;margin:38px 0 10px}
+  .prose p,.prose li{color:var(--ink)}
+  .prose ul{padding-left:22px}
+  .prose li{margin:6px 0}
+  .prose .meta{color:var(--muted);font-size:14px}
+  .prose table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}
+  .prose th,.prose td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .prose th{font-weight:600}
+  .prose code{font-size:.9em}
