@@ -693,8 +693,8 @@ privacy_body = """
     <p>As long as you have your account. When you delete something, it is deleted. When you delete your account,
       the account and your agents are deleted at once, and your data in the other OsMike services normally within the
       hour (at the latest within 30 days). A single agent you delete is removed within 24 hours. Backups exist only to
-      recover from a breakdown; your data disappears from them as they expire (daily after 14 days, weekly after 8 weeks,
-      monthly after 12 months), and a restored backup never brings a deleted account back. We keep only what the law
+      recover from a breakdown and are kept at most 30 days, and a restored backup never brings a deleted account
+      back. We keep only what the law
       requires.</p>
 
     <h2>Your rights</h2>
@@ -807,9 +807,9 @@ delete_body = """
     </ul>
     <h2>What is kept, and for how long</h2>
     <ul>
-      <li>Backups exist only to recover from a breakdown. Your data disappears from them as they expire: daily backups
-        after 14 days, weekly after 8 weeks, monthly after 12 months. If a backup is ever restored, deleted accounts are
-        deleted again straight away, so nothing comes back.</li>
+      <li>Backups exist only to recover from a breakdown and are kept at most 30 days, so your data is gone from them
+        within 30 days too. If a backup is ever restored, deleted accounts are deleted again straight away, so nothing
+        comes back.</li>
       <li>Technical logs (sign-ins, errors) are deleted after at most 90 days.</li>
       <li>Only what the law requires us to keep (for example bookkeeping records) is kept longer, and only for as long as
         the law requires.</li>
