@@ -774,3 +774,45 @@ support_body = """
   </section>
 """
 page("support.html", "Help — OsMike", "Help with OsMike: getting started, agents, password, deleting your account.", "/support", "", support_body)
+
+delete_body = """
+  <section class="page-head">
+    <p class="eyebrow rv"><span class="d"></span>Your account</p>
+    <h1 class="rv">Delete your OsMike account</h1>
+    <p class="sub rv">How to delete your account in the OsMike apps or on the web, what is deleted, and what is kept.</p>
+  </section>
+  <section class="prose">
+    <p class="meta">Applies to the OsMike app for iPhone and Android, the other OsMike apps and every OsMike service.
+      OsMike is run by Ryan AI AB, Sweden.</p>
+    <h2>In the OsMike app</h2>
+    <ol>
+      <li>Open the OsMike app and tap the round OsMike logo at the top right.</li>
+      <li>Tap <strong>Delete account…</strong></li>
+      <li>Type your e-mail address to confirm and tap <strong>Delete my account</strong>.</li>
+    </ol>
+    <h2>Without the app</h2>
+    <p>Sign in at <a href="https://account.osmike.com">account.osmike.com</a> and delete the account under
+      <em>Privacy &amp; your data</em>, or write to <a href="mailto:info@osmike.com">info@osmike.com</a> from the
+      backup e-mail address of your account and we delete it for you.</p>
+    <h2>What is deleted</h2>
+    <ul>
+      <li>At once: your account (name, e-mail, phone, password) and your agents, so nothing can use them any more.</li>
+      <li>Within 30 days: everything else you kept in OsMike — your agents' memory and chats, files, documents,
+        spreadsheets, mail, calendar, tasks, contacts and location history.</li>
+      <li>Voice messages are never kept: they are turned into text and the recording is deleted straight away.</li>
+    </ul>
+    <h2>What is kept, and for how long</h2>
+    <ul>
+      <li>Copies in backups disappear when those backups are replaced, within 30 days.</li>
+      <li>Technical logs (sign-ins, errors) are deleted after at most 90 days.</li>
+      <li>Only what the law requires us to keep (for example bookkeeping records) is kept longer, and only for as long as
+        the law requires.</li>
+    </ul>
+    <h2>Delete only some data</h2>
+    <p>You don't have to delete the whole account: you can delete single agents (agent settings → Delete agent) and
+      files (Files screen) in the app at any time.</p>
+    <p>Questions: <a href="mailto:info@osmike.com">info@osmike.com</a>. See also the <a href="/privacy">privacy policy</a>.</p>
+  </section>
+"""
+page("delete-account.html", "Delete your account — OsMike",
+     "How to delete your OsMike account in the app or on the web, what is deleted and what is kept.", "/delete-account", "", delete_body)
